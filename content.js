@@ -6,16 +6,16 @@
 window.PORTFOLIO_CONTENT = {
 
   profile: {
-    name: "Your Name",
+    name: "Yatika Malhotra",
     title: "Marketing Lead",
     tagline: "I build campaigns that turn attention into revenue — placeholder tagline, replace with your own one-liner.",
-    initials: "YN",
+    initials: "YM",
     location: "City, Country"
   },
 
   contact: {
-    email: "you@example.com",
-    phone: "+1 555 000 0000",
+    email: "yatikamalhotra@gmail.com",
+    phone: "7982029595",
     linkedin: "https://www.linkedin.com/in/your-handle",
     resumeUrl: ""
   },
