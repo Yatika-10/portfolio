@@ -194,7 +194,7 @@ window.PORTFOLIO_CONTENT = {
         { stat: "1.21M+", label: "LinkedIn impressions" },
         { stat: "5.8K+", label: "LinkedIn engagements" }
       ],
-      coverImage: "",
+      coverImage: "images/boats24-cover.jpg",
       gallery: [],
       ctaUrl: "",
       ctaLabel: "View case",
