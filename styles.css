@@ -102,16 +102,6 @@ p { margin: 0 0 1em; color: var(--muted); }
 .tab-chip:hover { color: var(--ink); }
 .tab-chip.is-active { background: var(--ink); color: #fff; }
 
-.nav-contact {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.5em 1em;
-  border-radius: 999px;
-  border: 1px solid var(--ink);
-  white-space: nowrap;
-}
-
 /* ---------- layout ---------- */
 
 main, .site-footer {
