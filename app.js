@@ -141,14 +141,15 @@
       var c = campaignById(pick.campaignId);
       if (!c) return "";
 
-      var media = (pick.coverImages || []).length
-        ? '<div class="flagship-card__media tint-' + ["pink", "blue", "yellow"][i % 3] + '">' +
-            pick.coverImages.map(function (src) { return '<img src="' + esc(src) + '" alt="">'; }).join("") +
+      var tint = TINTS[i % TINTS.length];
+      var media = c.coverImage
+        ? '<div class="flagship-card__media ' + tint + '"><img src="' + esc(c.coverImage) + '" alt="">' +
+            (c.isVideo ? '<span class="play-badge" aria-hidden="true">&#9658;</span>' : "") +
           "</div>"
-        : '<div class="flagship-card__media flagship-card__media--empty tint-' + ["pink", "blue", "yellow"][i % 3] + '"></div>';
+        : '<div class="flagship-card__media flagship-card__media--empty ' + tint + '"></div>';
 
-      var stats = (pick.metrics || []).map(function (m) {
-        return '<div class="stat-chip"><div class="stat-chip__value">' + esc(m.stat) + '</div><div class="stat-chip__label">' + esc(m.label) + "</div></div>";
+      var stats = (pick.metrics || []).map(function (m, si) {
+        return '<div class="stat-chip ' + TINTS[si % TINTS.length] + '"><div class="stat-chip__value">' + esc(m.stat) + '</div><div class="stat-chip__label">' + esc(m.label) + "</div></div>";
       }).join("");
 
       var metaParts = [c.company];
@@ -159,6 +160,13 @@
         ? '<a class="btn btn-ghost" href="' + esc(pick.secondaryLink.url) + '" target="_blank" rel="noopener">' + esc(pick.secondaryLink.label || "Read more") + "</a>"
         : "";
 
+      var story = c.challenge
+        ? '<div class="flagship-card__columns">' +
+            '<div><h4>Problem</h4><p>' + esc(c.challenge) + "</p></div>" +
+            '<div><h4>Idea</h4><p>' + esc(c.approach) + "</p></div>" +
+          "</div>"
+        : '<p class="flagship-card__story">' + esc(c.approach) + "</p>";
+
       return (
         '<article class="flagship-card">' +
           media +
@@ -166,10 +174,7 @@
             '<div class="flagship-card__meta">' + metaParts.map(esc).join(" &middot; ") + "</div>" +
             "<h3>" + esc(c.title) + "</h3>" +
             '<p class="flagship-card__hook">' + esc(pick.pitch) + "</p>" +
-            '<div class="flagship-card__columns">' +
-              '<div><h4>Problem</h4><p>' + esc(c.challenge) + "</p></div>" +
-              '<div><h4>Idea</h4><p>' + esc(c.approach) + "</p></div>" +
-            "</div>" +
+            story +
             (stats ? '<div class="stat-chip-row">' + stats + "</div>" : "") +
             '<div class="flagship-card__actions">' +
               '<a class="btn btn-primary" href="' + hrefFor("flagship", c.id) + '">See the full case &rarr;</a>' +
@@ -312,8 +317,8 @@
   }
 
   function renderModal(c) {
-    var results = (c.results || []).map(function (r) {
-      return '<div class="metric"><div class="metric__value">' + esc(r.stat) + '</div><div class="metric__label">' + esc(r.label) + "</div></div>";
+    var results = (c.results || []).map(function (r, i) {
+      return '<div class="metric ' + TINTS[i % TINTS.length] + '"><div class="metric__value">' + esc(r.stat) + '</div><div class="metric__label">' + esc(r.label) + "</div></div>";
     }).join("");
 
     var gallery = (c.gallery || []).length
@@ -324,15 +329,22 @@
       return '<li><a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.title || v.label) + "</a></li>";
     }).join("");
 
-    var pressLinks = (c.pressLinks || []).map(function (p) {
-      return '<li><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title || p.label) + "</a></li>";
+    var pressBadges = (c.pressLinks || []).map(function (p) {
+      return '<a class="press-badge" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title || p.label) + " &#8599;</a>";
     }).join("");
+
+    var story = c.challenge
+      ? '<div class="modal-columns">' +
+          '<div><h4>Challenge</h4><p>' + esc(c.challenge) + "</p></div>" +
+          '<div><h4>Approach</h4><p>' + esc(c.approach) + "</p></div>" +
+        "</div>"
+      : '<p class="modal-story">' + esc(c.approach) + "</p>";
 
     var preAmp = "";
     if (c.preAmp) {
       var paParagraphs = (c.preAmp.paragraphs || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
-      var paMetrics = (c.preAmp.metrics || []).map(function (m) {
-        return '<div class="metric"><div class="metric__value">' + esc(m.stat) + '</div><div class="metric__label">' + esc(m.label) + "</div></div>";
+      var paMetrics = (c.preAmp.metrics || []).map(function (m, i) {
+        return '<div class="metric ' + TINTS[i % TINTS.length] + '"><div class="metric__value">' + esc(m.stat) + '</div><div class="metric__label">' + esc(m.label) + "</div></div>";
       }).join("");
       var paGallery = (c.preAmp.gallery || []).length
         ? '<div class="modal-gallery">' + c.preAmp.gallery.map(function (src) { return '<img src="' + esc(src) + '" alt="" loading="lazy">'; }).join("") + "</div>"
@@ -351,19 +363,16 @@
       '<div class="modal-overlay" data-modal-overlay>' +
         '<div class="modal-panel" role="dialog" aria-modal="true" aria-label="' + esc(c.title) + '">' +
           '<button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>' +
-          (c.coverImage ? '<img class="modal-cover" src="' + esc(c.coverImage) + '" alt="">' : "") +
           '<div class="modal-meta">' + esc(c.company) + " &middot; " + esc(c.displayDate) + " &middot; " + esc(c.mediums.join(", ")) + "</div>" +
           "<h2>" + esc(c.title) + "</h2>" +
           '<p class="modal-hook">' + esc(c.summary) + "</p>" +
-          '<div class="modal-columns">' +
-            '<div><h4>Challenge</h4><p>' + esc(c.challenge) + "</p></div>" +
-            '<div><h4>Approach</h4><p>' + esc(c.approach) + "</p></div>" +
-          "</div>" +
+          (c.coverImage ? '<img class="modal-cover" src="' + esc(c.coverImage) + '" alt="">' : "") +
+          story +
+          (pressBadges ? '<div class="press-badge-row">' + pressBadges + "</div>" : "") +
           (results ? '<div class="metric-row">' + results + "</div>" : "") +
           gallery +
           preAmp +
           (videoLinks ? '<div class="modal-links"><h4>Watch</h4><ul>' + videoLinks + "</ul></div>" : "") +
-          (pressLinks ? '<div class="modal-links"><h4>Press</h4><ul>' + pressLinks + "</ul></div>" : "") +
           (c.ctaUrl ? '<a class="btn btn-primary" href="' + esc(c.ctaUrl) + '" target="_blank" rel="noopener">' + esc(c.ctaLabel || "View case") + "</a>" : "") +
         "</div>" +
       "</div>"

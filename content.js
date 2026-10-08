@@ -51,7 +51,7 @@ window.PORTFOLIO_CONTENT = {
 
   // Flagship work tab: pick a few campaign ids from the list below and give them
   // their own framing/pitch. "campaignId" must match a campaigns[].id value.
-  // coverImages: 1-2 image paths shown side by side on the card.
+  // The card's image is pulled from that campaign's own coverImage.
   // secondaryLink: optional second button next to "See the full case".
   flagshipPicks: [
     {
@@ -62,10 +62,6 @@ window.PORTFOLIO_CONTENT = {
         { stat: "8", label: "teaser cities" },
         { stat: "38.5M+", label: "teaser views" },
         { stat: "652K+", label: "teaser likes" }
-      ],
-      coverImages: [
-        "images/vikram-betaal-sighting-1.jpg",
-        "images/vikram-betaal-campaign.jpg"
       ],
       secondaryLink: { label: "Watch on LinkedIn", url: "https://lnkd.in/p/guE8SiF9" }
     },
@@ -138,8 +134,8 @@ window.PORTFOLIO_CONTENT = {
       isVideo: true,
       summary: "If people don't trust you, borrow trust from a legend they already do.",
       heroStat: { stat: "38.5M+", label: "pre-launch teaser views" },
-      challenge: "Cars24's two biggest customer promises were true — but truth alone wasn't making them memorable.",
-      approach: "We handed those two promises to Vikram and Betaal, a folklore pair every Indian already trusts, but only after letting an unbranded 'Betaal sightings' teaser run loose across 8 cities first.",
+      challenge: "",
+      approach: "The campaign reimagined one of India's most iconic folklore duos to solve a modern trust problem. Instead of using Vikram & Betaal purely for nostalgia, we turned Betaal into the voice of every used-car buyer—asking the same tough questions customers ask before making one of their biggest purchases, while CARS24 answered them with confidence.",
       results: [
         { stat: "2", label: "promise films" },
         { stat: "8", label: "teaser cities" },
