@@ -370,7 +370,7 @@
           '<p class="modal-hook">' + esc(c.summary) + "</p>" +
           (c.coverImage ? '<img class="modal-cover" src="' + esc(c.coverImage) + '" alt="">' : "") +
           story +
-          (pressBadges ? '<div class="press-badge-row">' + pressBadges + "</div>" : "") +
+          (pressBadges ? '<div class="press-badge-block">' + (c.pressHeading ? '<h4>' + esc(c.pressHeading) + "</h4>" : "") + '<div class="press-badge-row">' + pressBadges + "</div></div>" : "") +
           (results ? '<div class="metric-row">' + results + "</div>" : "") +
           gallery +
           preAmp +

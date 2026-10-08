@@ -495,7 +495,9 @@ main, .site-footer {
 .modal-columns h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
 .modal-columns p { margin: 0; }
 
-.press-badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.press-badge-block { margin-bottom: 16px; }
+.press-badge-block h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 8px; }
+.press-badge-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .press-badge {
   display: inline-flex;
   align-items: center;

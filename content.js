@@ -77,12 +77,15 @@ window.PORTFOLIO_CONTENT = {
       secondaryLink: { label: "Read my post", url: "https://lnkd.in/p/gpZ73N54" }
     },
     {
-      campaignId: "campaign-two",
-      pitch: "Another sentence making the case for why this campaign mattered.",
+      campaignId: "ganesh-chaturthi",
+      pitch: "Showing up isn't enough. The best brands earn a place inside the celebration.",
       metrics: [
-        { stat: "0%", label: "Placeholder metric" },
-        { stat: "0K", label: "Placeholder metric" }
-      ]
+        { stat: "11M+", label: "Instagram views" },
+        { stat: "777K+", label: "LinkedIn impressions" },
+        { stat: "40+", label: "organic posts" },
+        { stat: "9M+", label: "organic views" }
+      ],
+      secondaryLink: { label: "Read my post", url: "https://lnkd.in/p/gDMVxx36" }
     }
   ],
 
@@ -208,28 +211,47 @@ window.PORTFOLIO_CONTENT = {
       ]
     },
     {
-      id: "campaign-two",
-      title: "Placeholder Campaign Two",
-      company: "Company B",
-      period: "2024-09",
-      displayDate: "Sep 2024",
-      roles: ["Content", "Brand"],
-      mediums: ["Email", "Web"],
+      id: "ganesh-chaturthi",
+      title: "Bappa Ki Sawari",
+      company: "Cars24",
+      period: "2026-09",
+      displayDate: "Sep 2026",
+      context: "Khetwadi, Mumbai",
+      roles: ["Strategy", "Content", "Growth"],
+      mediums: ["Social", "PR", "Out-of-home"],
       isVideo: false,
-      summary: "A one-line teaser describing the campaign's hook.",
-      heroStat: { stat: "0K", label: "Headline result" },
-      challenge: "Placeholder paragraph describing the problem or brief you were given.",
-      approach: "Placeholder paragraph describing what you actually did about it.",
-      results: [
-        { stat: "0%", label: "Placeholder result" },
-        { stat: "0K", label: "Placeholder result" }
+      summary: "Showing up isn't enough. The best brands earn a place inside the celebration.",
+      heroStat: { stat: "11M+", label: "Instagram views" },
+      challenge: "",
+      approach: "Festivals are full of brands trying to get noticed — a branded photo booth, a loud banner, a selfie point competing for attention alongside everything people actually came for. If a visitor remembers the installation more than the festival itself, the idea hasn't really worked.",
+      story: [
+        "Festivals are full of brands trying to get noticed — a branded photo booth, a loud banner, a selfie point competing for attention alongside everything people actually came for. If a visitor remembers the installation more than the festival itself, the idea hasn't really worked.",
+        "For Ganesh Chaturthi, we partnered with Khetwadicha Raja, one of Mumbai's most loved Ganpati pandals, and asked a different question: could Cars24 become part of the celebration instead of standing next to it?",
+        "We turned a Cars24 Swift into Bappa Ki Sawari — cutting it open and removing the doors so nothing stood between devotees and Bappa — and placed it right at the exit of the darshan queue.",
+        "As families walked out after darshan, they stopped, folded their hands, smiled, and took pictures. It didn't feel like advertising — it felt like one more moment from their visit. The response was strong enough that the pandal organisers asked us to remove the installation, since the crowds gathering around it were causing congestion outside. The best brand moments don't announce themselves — they just quietly belong.",
+        "I led this campaign end-to-end — from the original concept through production, on-ground execution, creator distribution, and PR amplification, owning the full rollout from idea to activation."
       ],
-      coverImage: "",
-      gallery: [],
+      results: [
+        { stat: "11M+", label: "Instagram views" },
+        { stat: "777K+", label: "LinkedIn impressions" },
+        { stat: "40+", label: "organic posts" },
+        { stat: "9M+", label: "organic views" }
+      ],
+      coverImage: "images/ganesh-chaturthi-cover.jpg",
+      gallery: [
+        "images/ganesh-chaturthi-1.jpg",
+        "images/ganesh-chaturthi-2.jpg"
+      ],
       ctaUrl: "",
       ctaLabel: "View case",
       videoLinks: [],
-      pressLinks: []
+      pressHeading: "Featured Posts",
+      pressLinks: [
+        { title: "Instagram Reel", url: "https://www.instagram.com/reel/DdwNkKGyvfV/" },
+        { title: "Creator Post", url: "https://www.linkedin.com/posts/akashshinde1_i-went-to-khetwadi-cha-raja-for-darshan-and-share-7505609605222174720-owvN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGWxGR4BFwUK-HP5pTFi5vSmYNXan5ONrWc" },
+        { title: "Instagram Reel", url: "https://www.instagram.com/reel/DdwZMnlzsyA/" },
+        { title: "Instagram Post", url: "https://www.instagram.com/p/Ddg2T_NsgJN/" }
+      ]
     },
     {
       id: "campaign-three",
