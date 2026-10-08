@@ -367,6 +367,53 @@ window.PORTFOLIO_CONTENT = {
       ctaLabel: "View case",
       videoLinks: [],
       pressLinks: []
+    },
+    {
+      id: "creator-engine",
+      title: "The Creator Engine",
+      company: "Cars24",
+      period: "2025-06",
+      displayDate: "2025 – Present",
+      context: "pan-India, Instagram",
+      roles: ["Creators & influence"],
+      mediums: ["Digital & social"],
+      isVideo: false,
+      summary: "Content that fits beats a celebrity shoot that takes a month to land.",
+      heroStat: { stat: "119+", label: "creator collaborations" },
+      challenge: "",
+      approach: "Instead of running one-off influencer posts, this is a repeatable system for finding, briefing, and paying creators across Instagram at scale — every brief written to fit the creator's own voice rather than reading like an ad, so it gets watched as content first.",
+      results: [
+        { stat: "119+", label: "creator collaborations" },
+        { stat: "35M+", label: "views, top single reel" }
+      ],
+      coverImage: "",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressHeading: "Best Performing Reels",
+      pressLinks: [
+        { title: "Dil se paneer", url: "https://www.instagram.com/dilsepaneer/" },
+        { title: "Gagan", url: "https://www.instagram.com/justgagan__/" },
+        { title: "Pyari Varsha", url: "https://www.instagram.com/pyari.varsha/" },
+        { title: "Uditya", url: "https://www.instagram.com/udityaanain/" },
+        { title: "Bhavesh", url: "https://www.instagram.com/ibhaveshmanglani/" },
+        { title: "Yash & gyan", url: "https://www.instagram.com/flyingboysz/" },
+        { title: "Aryan", url: "https://www.instagram.com/aryan.nnnn9/" },
+        { title: "Sanjay Kathuria", url: "https://www.instagram.com/financebysanjay/" },
+        { title: "Rustam", url: "https://www.instagram.com/its_rustam09/" },
+        { title: "Himanshu", url: "https://www.instagram.com/himanshu_shadi_card/" },
+        { title: "Jasmine", url: "https://www.instagram.com/heyjassuu/" },
+        { title: "Priyal Rajput", url: "https://www.instagram.com/priyal_rajputtt/" },
+        { title: "Nidhi", url: "https://www.instagram.com/iam_nidhidixit/" },
+        { title: "Anuj Rathore", url: "https://www.instagram.com/rathoreanuj_/" },
+        { title: "Mufasa", url: "https://www.instagram.com/official_mufasa26/" },
+        { title: "Jhony Pandey", url: "https://www.instagram.com/jhony_pandey/" },
+        { title: "twistedsagar", url: "https://www.instagram.com/twistedsagar/" },
+        { title: "Vikhyat Shivhare", url: "https://www.instagram.com/vikhyatshivhare/" },
+        { title: "Guru Dwivedi", url: "https://www.instagram.com/gurusdwivedi/" },
+        { title: "Palak Choudhary", url: "https://www.instagram.com/yoopalak/" }
+      ]
     }
   ],
 
