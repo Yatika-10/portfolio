@@ -65,9 +65,9 @@ window.PORTFOLIO_CONTENT = {
       ],
       coverImages: [
         "images/vikram-betaal-sighting-1.jpg",
-        "images/vikram-betaal-sighting-2.jpg"
+        "images/vikram-betaal-campaign.jpg"
       ],
-      secondaryLink: { label: "", url: "" }
+      secondaryLink: { label: "Watch on LinkedIn", url: "https://lnkd.in/p/guE8SiF9" }
     },
     {
       campaignId: "campaign-one",
@@ -145,7 +145,7 @@ window.PORTFOLIO_CONTENT = {
         { stat: "8", label: "teaser cities" },
         { stat: "38.5M+", label: "teaser views" }
       ],
-      coverImage: "images/vikram-betaal-sighting-1.jpg",
+      coverImage: "images/vikram-betaal-campaign.jpg",
       gallery: [],
       ctaUrl: "",
       ctaLabel: "View case",
