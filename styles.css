@@ -136,15 +136,24 @@ main, .site-footer {
 .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
 .hero__title { font-weight: 600; color: var(--muted); }
 .hero__tagline {
-  max-width: 560px;
-  margin: 16px auto 0;
-  font-size: 1.35rem;
-  font-weight: 800;
+  max-width: 600px;
+  margin: 18px auto 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.35;
   color: var(--accent-ink);
 }
-.hero__bio { max-width: 560px; margin: 16px auto 24px; }
-.hero__bio-line { margin: 0 0 8px; font-size: 1rem; }
-.hero__bio-line:last-child { margin-bottom: 0; }
+.hero__bio {
+  max-width: 640px;
+  margin: 20px auto 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.hero__bio-line { margin: 0; font-size: 1rem; line-height: 1.5; }
 .hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
 .hero__actions:last-of-type { margin-bottom: 0; }
 
