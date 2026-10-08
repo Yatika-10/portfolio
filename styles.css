@@ -153,7 +153,7 @@ main, .site-footer {
   align-items: center;
   gap: 6px;
 }
-.hero__bio-line { margin: 0; font-size: 1rem; line-height: 1.5; }
+.hero__bio-line { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
 .hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
 .hero__actions:last-of-type { margin-bottom: 0; }
 
