@@ -284,8 +284,11 @@ window.PORTFOLIO_CONTENT = {
         { stat: "20M+", label: "social reach" },
         { stat: "16/17", label: "markets with search lift" }
       ],
-      coverImage: "",
-      gallery: [],
+      coverImage: "images/promise-films-2.jpg",
+      gallery: [
+        "images/promise-films-1.jpg",
+        "images/promise-films-3.jpg"
+      ],
       ctaUrl: "",
       ctaLabel: "View case",
       videoLinks: [],
@@ -307,7 +310,7 @@ window.PORTFOLIO_CONTENT = {
       results: [
         { stat: "2M+", label: "Instagram reach" }
       ],
-      coverImage: "",
+      coverImage: "images/genz-road-safety-1.jpg",
       gallery: [],
       ctaUrl: "",
       ctaLabel: "View case",
@@ -332,8 +335,11 @@ window.PORTFOLIO_CONTENT = {
         { stat: "500+", label: "potholes fixed" },
         { stat: "Winner", label: "e4m RetailEX 2026" }
       ],
-      coverImage: "",
-      gallery: [],
+      coverImage: "images/potholes-1.jpg",
+      gallery: [
+        "images/potholes-2.jpg",
+        "images/potholes-3.jpg"
+      ],
       ctaUrl: "",
       ctaLabel: "View case",
       videoLinks: [],
