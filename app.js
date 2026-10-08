@@ -19,7 +19,7 @@
   var TABS = [
     { slug: "", label: "Overview" },
     { slug: "flagship", label: "Flagship work" },
-    { slug: "impact", label: "Business impact" },
+    { slug: "impact", label: "Impact" },
     { slug: "campaigns", label: "All campaigns" },
     { slug: "career", label: "Career" }
   ];
@@ -192,22 +192,24 @@
   }
 
   function renderImpact() {
-    var rows = (DATA.impactMetrics || []).map(function (m) {
-      var pct = Math.max(0, Math.min(100, (m.afterValue / m.maxValue) * 100));
+    var cards = (DATA.impactMetrics || []).map(function (m, i) {
       var beforePct = Math.max(0, Math.min(100, (m.beforeValue / m.maxValue) * 100));
+      var afterPct = Math.max(0, Math.min(100, (m.afterValue / m.maxValue) * 100));
+      var tint = TINTS[i % TINTS.length];
       return (
-        '<div class="impact-row">' +
-          '<div class="impact-row__head"><strong>' + esc(m.company) + "</strong><span>" + esc(m.metric) + "</span></div>" +
-          '<div class="impact-bar"><div class="impact-bar__before" style="width:' + beforePct + '%"></div><div class="impact-bar__after" style="width:' + pct + '%"></div></div>' +
-          '<div class="impact-row__values"><span>' + esc(m.before) + " &rarr; " + esc(m.after) + "</span></div>" +
-          (m.note ? '<p class="impact-row__note">' + esc(m.note) + "</p>" : "") +
+        '<div class="impact-card">' +
+          '<div class="impact-card__head"><h3>' + esc(m.metric) + '</h3><span class="impact-card__company">' + esc(m.company) + "</span></div>" +
+          '<div class="impact-card__headline ' + tint + '">' + esc(m.headline) + "</div>" +
+          '<div class="impact-card__bar-row"><span class="impact-card__bar-label">Before</span><div class="impact-card__bar"><div class="impact-card__bar-fill impact-card__bar-fill--before" style="width:' + beforePct + '%"></div></div><span class="impact-card__bar-value">' + esc(m.before) + "</span></div>" +
+          '<div class="impact-card__bar-row"><span class="impact-card__bar-label">After</span><div class="impact-card__bar"><div class="impact-card__bar-fill impact-card__bar-fill--after ' + tint + '" style="width:' + afterPct + '%"></div></div><span class="impact-card__bar-value">' + esc(m.after) + "</span></div>" +
+          (m.note ? '<p class="impact-card__note">' + esc(m.note) + "</p>" : "") +
         "</div>"
       );
     }).join("");
 
     return (
-      '<section class="section-intro"><h1>Business impact</h1><p>Before/after numbers from campaigns I led or drove.</p></section>' +
-      '<section class="impact-list">' + (rows || '<p class="empty-note">Add entries to impactMetrics in content.js to populate this tab.</p>') + "</section>"
+      '<section class="section-intro"><h1>Business impact</h1><p class="section-subtitle">before and after, on the numbers a business cares about</p></section>' +
+      '<section class="impact-grid">' + (cards || '<p class="empty-note">Add entries to impactMetrics in content.js to populate this tab.</p>') + "</section>"
     );
   }
 
@@ -222,16 +224,22 @@
 
   function renderCampaignsTab() {
     var list = filteredCampaigns();
-    var cardsHtml = list.map(function (c) {
+    var cardsHtml = list.map(function (c, i) {
+      var tint = TINTS[i % TINTS.length];
+      var media = c.coverImage
+        ? '<div class="poll-card__media"><img src="' + esc(c.coverImage) + '" alt="">' + (c.isVideo ? '<span class="play-badge" aria-hidden="true">&#9658;</span>' : "") + "</div>"
+        : '<div class="poll-card__media poll-card__media--empty ' + tint + '"></div>';
       return (
-        '<article class="campaign-card">' +
-          (c.isVideo ? '<span class="badge">Video</span>' : "") +
-          '<div class="campaign-card__meta">' + esc(c.company) + " &middot; " + esc(c.displayDate) + "</div>" +
-          "<h3>" + esc(c.title) + "</h3>" +
-          '<p class="campaign-card__hook">' + esc(c.summary) + "</p>" +
-          '<div class="campaign-card__stat"><strong>' + esc(c.heroStat.stat) + "</strong> " + esc(c.heroStat.label) + "</div>" +
-          '<div class="tag-row">' + c.roles.concat(c.mediums).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
-          '<a class="btn btn-ghost" href="' + hrefFor("campaigns", c.id) + '">View case</a>' +
+        '<article class="poll-card">' +
+          media +
+          "<h3 class=\"poll-card__title\">" + esc(c.title) + "</h3>" +
+          '<div class="poll-card__note ' + tint + '">' +
+            '<div class="poll-card__meta">' + esc(c.company) + " &middot; " + esc(c.displayDate) + "</div>" +
+            '<p class="poll-card__hook">' + esc(c.summary) + "</p>" +
+            '<div class="poll-card__stat">' + esc(c.heroStat.stat) + "</div>" +
+            '<div class="poll-card__stat-label">' + esc(c.heroStat.label) + "</div>" +
+            '<a class="poll-card__link" href="' + hrefFor("campaigns", c.id) + '">Open the case &rarr;</a>' +
+          "</div>" +
         "</article>"
       );
     }).join("");
@@ -242,7 +250,7 @@
           '<td data-label="Campaign"><a href="' + hrefFor("campaigns", c.id) + '">' + esc(c.title) + "</a></td>" +
           '<td data-label="Company">' + esc(c.company) + "</td>" +
           '<td data-label="Date">' + esc(c.displayDate) + "</td>" +
-          '<td data-label="Role">' + esc(c.roles.join(", ")) + "</td>" +
+          '<td data-label="Job">' + esc(c.roles.join(", ")) + "</td>" +
           '<td data-label="Medium">' + esc(c.mediums.join(", ")) + "</td>" +
           '<td data-label="Result">' + esc(c.heroStat.stat) + " " + esc(c.heroStat.label) + "</td>" +
         "</tr>"
@@ -252,10 +260,10 @@
     var empty = '<p class="empty-note">No campaigns match these filters.</p>';
 
     return (
-      '<section class="section-intro"><h1>All campaigns</h1><p>Filter by role or medium, and switch between cards and a table.</p></section>' +
+      '<section class="section-intro"><h1>All campaigns</h1><p class="section-subtitle">the full wall. filter it, or switch to a table</p></section>' +
       '<section class="filters">' +
-        renderFilterChips("Role", "role", DATA.filterOptions.roles, state.role) +
-        renderFilterChips("Medium", "medium", DATA.filterOptions.mediums, state.medium) +
+        renderFilterChips("By the job", "role", DATA.filterOptions.roles, state.role) +
+        renderFilterChips("By medium", "medium", DATA.filterOptions.mediums, state.medium) +
         '<div class="filter-group view-toggle">' +
           '<span class="filter-group__label">View</span>' +
           '<div class="chip-row">' +
@@ -264,10 +272,11 @@
           "</div>" +
         "</div>" +
       "</section>" +
+      '<p class="campaign-count">' + list.length + " of " + DATA.campaigns.length + " campaigns &middot; newest first" + "</p>" +
       (list.length === 0 ? empty :
         state.view === "table"
-          ? '<section class="table-wrap"><table class="campaign-table"><thead><tr><th>Campaign</th><th>Company</th><th>Date</th><th>Role</th><th>Medium</th><th>Result</th></tr></thead><tbody>' + tableRows + "</tbody></table></section>"
-          : '<section class="campaign-grid">' + cardsHtml + "</section>")
+          ? '<section class="table-wrap"><table class="campaign-table"><thead><tr><th>Campaign</th><th>Company</th><th>Date</th><th>Job</th><th>Medium</th><th>Result</th></tr></thead><tbody>' + tableRows + "</tbody></table></section>"
+          : '<section class="poll-grid">' + cardsHtml + "</section>")
     );
   }
 

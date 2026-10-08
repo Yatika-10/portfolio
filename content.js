@@ -89,40 +89,52 @@ window.PORTFOLIO_CONTENT = {
     }
   ],
 
-  // Business impact tab: before/after bars. beforeValue/afterValue/maxValue are
-  // plain numbers used only to size the bar — before/after are the display strings.
+  // Impact tab: before/after numbers. beforeValue/afterValue/maxValue are
+  // plain numbers used only to size the two bars — before/after are the display strings.
   impactMetrics: [
     {
-      company: "Company A",
-      metric: "Placeholder metric name",
-      before: "0", beforeValue: 10,
-      after: "0", afterValue: 40,
-      maxValue: 50,
-      note: "One line of context on what drove the change."
+      company: "Cars24",
+      metric: "Share of search",
+      headline: "1.5x",
+      before: "1.0x", beforeValue: 1.0,
+      after: "1.5x", afterValue: 1.5,
+      maxValue: 2.0,
+      note: "Lowest to highest month, led by cricket and YouTube."
     },
     {
-      company: "Company B",
-      metric: "Placeholder metric name",
-      before: "0", beforeValue: 5,
-      after: "0", afterValue: 25,
-      maxValue: 30,
-      note: "One line of context on what drove the change."
+      company: "Cars24",
+      metric: "Organic brand search",
+      headline: "1.6x",
+      before: "1.0x", beforeValue: 1.0,
+      after: "1.6x", afterValue: 1.6,
+      maxValue: 2.0,
+      note: "+64%, with year-on-year growth every month."
     },
     {
-      company: "Company C",
-      metric: "Placeholder metric name",
-      before: "0", beforeValue: 20,
-      after: "0", afterValue: 60,
-      maxValue: 70,
-      note: "One line of context on what drove the change."
+      company: "Cars24",
+      metric: "Organic new users",
+      headline: "+27%",
+      before: "1.0x", beforeValue: 1.0,
+      after: "1.27x", afterValue: 1.27,
+      maxValue: 1.5,
+      note: "City-led brand model, on a flat budget."
+    },
+    {
+      company: "Cars24",
+      metric: "Creator cost per view",
+      headline: "-93%",
+      before: "₹0.4", beforeValue: 0.4,
+      after: "₹0.03", afterValue: 0.03,
+      maxValue: 0.4,
+      note: "229M views from a creator program built from zero."
     }
   ],
 
   // Master lists for the filter chips on "All campaigns". Keep these in sync
   // with the roles/mediums used inside each campaign object below.
   filterOptions: {
-    roles: ["Strategy", "Content", "Paid media", "Brand", "Growth"],
-    mediums: ["Social", "Video", "Email", "Out-of-home", "Web", "TV", "CTV", "Digital", "PR"]
+    roles: ["Brand building", "Trust & promises", "Purpose & road safety", "Moment marketing", "Creators & influence", "Growth & retail"],
+    mediums: ["Brand films", "OOH & billboards", "Print", "On-ground", "Digital & social"]
   },
 
   // The full case-study library. Add as many as you like — they automatically
@@ -135,8 +147,8 @@ window.PORTFOLIO_CONTENT = {
       period: "2026-09",
       displayDate: "Sep 2026",
       context: "TV, CTV, digital",
-      roles: ["Strategy", "Content", "Brand"],
-      mediums: ["TV", "CTV", "Digital"],
+      roles: ["Trust & promises"],
+      mediums: ["Brand films", "Digital & social"],
       isVideo: true,
       summary: "If people don't trust you, borrow trust from a legend they already do.",
       heroStat: { stat: "38.5M+", label: "pre-launch teaser views" },
@@ -179,8 +191,8 @@ window.PORTFOLIO_CONTENT = {
       period: "2026-08",
       displayDate: "Aug 2026",
       context: "Gurugram floods",
-      roles: ["Strategy", "Content", "Growth"],
-      mediums: ["Social", "PR"],
+      roles: ["Moment marketing"],
+      mediums: ["On-ground", "Digital & social"],
       isVideo: false,
       summary: "When Gurgaon flooded, we didn't just react to the moment, we became part of it.",
       heroStat: { stat: "7.17M+", label: "Instagram views" },
@@ -217,8 +229,8 @@ window.PORTFOLIO_CONTENT = {
       period: "2026-09",
       displayDate: "Sep 2026",
       context: "Khetwadi, Mumbai",
-      roles: ["Strategy", "Content", "Growth"],
-      mediums: ["Social", "PR", "Out-of-home"],
+      roles: ["Moment marketing"],
+      mediums: ["On-ground"],
       isVideo: false,
       summary: "Showing up isn't enough. The best brands earn a place inside the celebration.",
       heroStat: { stat: "11M+", label: "Instagram views" },
@@ -254,21 +266,23 @@ window.PORTFOLIO_CONTENT = {
       ]
     },
     {
-      id: "campaign-three",
-      title: "Placeholder Campaign Three",
-      company: "Company C",
-      period: "2024-03",
-      displayDate: "Mar 2024",
-      roles: ["Growth", "Paid media"],
-      mediums: ["Out-of-home", "Social"],
-      isVideo: false,
-      summary: "A one-line teaser describing the campaign's hook.",
-      heroStat: { stat: "0x", label: "Headline result" },
-      challenge: "Placeholder paragraph describing the problem or brief you were given.",
-      approach: "Placeholder paragraph describing what you actually did about it.",
+      id: "the-promise-films",
+      title: "The Promise Films",
+      company: "Cars24",
+      period: "2026-02",
+      displayDate: "Feb 2026",
+      context: "Mobile, CTV",
+      roles: ["Brand building"],
+      mediums: ["Brand films", "Digital & social"],
+      isVideo: true,
+      summary: "Three family promises, told the way people actually watch television now.",
+      heroStat: { stat: "185M+", label: "impressions" },
+      challenge: "Trust was the real barrier to buying a used car — and competing on price alone only taught customers to keep shopping around.",
+      approach: "We built three family films, each centred on one customer promise, timed to launch during the T20 World Cup across mobile and CTV, with regional versions running in 17 markets.",
       results: [
-        { stat: "0%", label: "Placeholder result" },
-        { stat: "0x", label: "Placeholder result" }
+        { stat: "185M+", label: "impressions" },
+        { stat: "20M+", label: "social reach" },
+        { stat: "16/17", label: "markets with search lift" }
       ],
       coverImage: "",
       gallery: [],
@@ -278,21 +292,68 @@ window.PORTFOLIO_CONTENT = {
       pressLinks: []
     },
     {
-      id: "campaign-four",
-      title: "Placeholder Campaign Four",
-      company: "Company A",
-      period: "2023-11",
-      displayDate: "Nov 2023",
-      roles: ["Strategy", "Brand"],
-      mediums: ["Web", "Video"],
-      isVideo: true,
-      summary: "A one-line teaser describing the campaign's hook.",
-      heroStat: { stat: "0%", label: "Headline result" },
-      challenge: "Placeholder paragraph describing the problem or brief you were given.",
-      approach: "Placeholder paragraph describing what you actually did about it.",
+      id: "genz-road-safety-billboards",
+      title: "Gen Z Road Safety Billboards",
+      company: "Cars24",
+      period: "2025-01",
+      displayDate: "Jan 2025",
+      roles: ["Purpose & road safety"],
+      mediums: ["OOH & billboards", "Digital & social"],
+      isVideo: false,
+      summary: "Road-safety advice nobody reads, rewritten in the language Gen Z already uses.",
+      heroStat: { stat: "2M+", label: "Instagram reach" },
+      challenge: "Standard road-safety messaging gets tuned out by younger drivers — the tone itself feels like it's talking past them.",
+      approach: "We rewrote classic safety warnings in Gen Z's own voice and vocabulary, placed across OOH and amplified on social.",
       results: [
-        { stat: "0%", label: "Placeholder result" },
-        { stat: "0K", label: "Placeholder result" }
+        { stat: "2M+", label: "Instagram reach" }
+      ],
+      coverImage: "",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
+    },
+    {
+      id: "fixing-500-potholes",
+      title: "Fixing 500+ Potholes",
+      company: "Cars24",
+      period: "2025-08",
+      displayDate: "Aug 2025",
+      roles: ["Purpose & road safety"],
+      mediums: ["On-ground", "Digital & social"],
+      isVideo: false,
+      summary: "For an anniversary, we fixed something people actually needed fixed.",
+      heroStat: { stat: "10M+", label: "reach" },
+      challenge: "A brand anniversary is usually an excuse to talk about yourself — we wanted ours to do something useful instead.",
+      approach: "We used the occasion to fund and fix over 500 potholes across the city, turning a brand milestone into a tangible civic act.",
+      results: [
+        { stat: "10M+", label: "reach" },
+        { stat: "500+", label: "potholes fixed" },
+        { stat: "Winner", label: "e4m RetailEX 2026" }
+      ],
+      coverImage: "",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
+    },
+    {
+      id: "the-rebrand",
+      title: "The Rebrand",
+      company: "Cars24",
+      period: "2026-03",
+      displayDate: "Jan–Mar 2026",
+      roles: ["Brand building"],
+      mediums: ["On-ground", "Digital & social"],
+      isVideo: false,
+      summary: "A brand confident enough in its work doesn't need to shout anymore.",
+      heroStat: { stat: "56", label: "hubs rebranded" },
+      challenge: "Cars24's visual identity was built for a brand still trying to prove itself — the business had outgrown that voice.",
+      approach: "We led a full identity rebrand, rolling the new look out across hubs, signage, and every customer touchpoint.",
+      results: [
+        { stat: "56", label: "hubs moved to new identity" }
       ],
       coverImage: "",
       gallery: [],
