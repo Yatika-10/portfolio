@@ -66,12 +66,15 @@ window.PORTFOLIO_CONTENT = {
       secondaryLink: { label: "Watch on LinkedIn", url: "https://lnkd.in/p/guE8SiF9" }
     },
     {
-      campaignId: "campaign-one",
-      pitch: "One sentence on why this is the case you'd lead with in an interview.",
+      campaignId: "boats24",
+      pitch: "When Gurgaon flooded, we didn't just react to the moment, we became part of it.",
       metrics: [
-        { stat: "0%", label: "Placeholder metric" },
-        { stat: "0x", label: "Placeholder metric" }
-      ]
+        { stat: "20+", label: "media features" },
+        { stat: "7.17M+", label: "Instagram views" },
+        { stat: "1.21M+", label: "LinkedIn impressions" },
+        { stat: "125K+", label: "Instagram engagements" }
+      ],
+      secondaryLink: { label: "Read my post", url: "https://lnkd.in/p/gpZ73N54" }
     },
     {
       campaignId: "campaign-two",
@@ -116,7 +119,7 @@ window.PORTFOLIO_CONTENT = {
   // with the roles/mediums used inside each campaign object below.
   filterOptions: {
     roles: ["Strategy", "Content", "Paid media", "Brand", "Growth"],
-    mediums: ["Social", "Video", "Email", "Out-of-home", "Web", "TV", "CTV", "Digital"]
+    mediums: ["Social", "Video", "Email", "Out-of-home", "Web", "TV", "CTV", "Digital", "PR"]
   },
 
   // The full case-study library. Add as many as you like — they automatically
@@ -167,29 +170,42 @@ window.PORTFOLIO_CONTENT = {
       }
     },
     {
-      id: "campaign-one",
-      title: "Placeholder Campaign One",
-      company: "Company A",
-      period: "2025-01",
-      displayDate: "Jan 2025",
-      roles: ["Strategy", "Paid media"],
-      mediums: ["Social", "Video"],
-      isVideo: true,
-      summary: "A one-line teaser describing the campaign's hook.",
-      heroStat: { stat: "0%", label: "Headline result" },
-      challenge: "Placeholder paragraph describing the problem or brief you were given.",
-      approach: "Placeholder paragraph describing what you actually did about it.",
+      id: "boats24",
+      title: "Boats24",
+      company: "Cars24",
+      period: "2026-08",
+      displayDate: "Aug 2026",
+      context: "Gurugram floods",
+      roles: ["Strategy", "Content", "Growth"],
+      mediums: ["Social", "PR"],
+      isVideo: false,
+      summary: "When Gurgaon flooded, we didn't just react to the moment, we became part of it.",
+      heroStat: { stat: "7.17M+", label: "Instagram views" },
+      challenge: "Gurgaon flooded, and people couldn't get home.",
+      approach: "For one weekend, Cars24 became Boats24 — ferrying stranded commuters across roads that had turned into rivers.",
+      story: [
+        "When Gurgaon came to a standstill because of heavy flooding, we saw an opportunity to respond in real time. Instead of talking about the situation, we became part of it.",
+        "For one weekend, Cars24 became Boats24-deploying branded boats to help people cross waterlogged roads that had become impossible to navigate. The idea worked because it wasn't created for a stage or an event. It showed up exactly where people needed it, while also making a sharp, culturally relevant statement about a problem the city faces every monsoon.",
+        "I led the activation end-to-end—from identifying the opportunity and executing the on-ground experience to driving its amplification across social media and PR. The entire campaign went from idea to execution within a single day."
+      ],
       results: [
-        { stat: "0%", label: "Placeholder result" },
-        { stat: "0K", label: "Placeholder result" },
-        { stat: "0x", label: "Placeholder result" }
+        { stat: "20+", label: "media features" },
+        { stat: "7.17M+", label: "Instagram views" },
+        { stat: "1.21M+", label: "LinkedIn impressions" },
+        { stat: "5.8K+", label: "LinkedIn engagements" }
       ],
       coverImage: "",
       gallery: [],
       ctaUrl: "",
       ctaLabel: "View case",
       videoLinks: [],
-      pressLinks: []
+      pressLinks: [
+        { title: "NDTV", url: "https://www.ndtv.com/offbeat/cars24-slapped-with-rs-50-000-challan-after-deploying-boat-on-flooded-gurugram-road-11893804" },
+        { title: "Hindustan Times", url: "https://www.hindustantimes.com/" },
+        { title: "The Indian Express", url: "https://indianexpress.com/article/trending/trending-in-india/cars24-rs-50000-challan-gurgaon-boat-waterlogging-10827433/" },
+        { title: "Business Today", url: "https://www.businesstoday.in/latest/trends/story/cars24s-boat-campaign-goes-viral-gurugram-police-denies-rs50000-challan-seizes-boat-548705-2026-08-12" },
+        { title: "afaqs!", url: "https://www.afaqs.com/news/mktg/cars24s-boat-stunt-turns-flooded-gurugram-road-into-a-commute-12254770" }
+      ]
     },
     {
       id: "campaign-two",

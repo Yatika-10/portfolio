@@ -333,12 +333,14 @@
       return '<a class="press-badge" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title || p.label) + " &#8599;</a>";
     }).join("");
 
-    var story = c.challenge
-      ? '<div class="modal-columns">' +
-          '<div><h4>Challenge</h4><p>' + esc(c.challenge) + "</p></div>" +
-          '<div><h4>Approach</h4><p>' + esc(c.approach) + "</p></div>" +
-        "</div>"
-      : '<p class="modal-story">' + esc(c.approach) + "</p>";
+    var story = (c.story && c.story.length)
+      ? '<div class="modal-story">' + c.story.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + "</div>"
+      : c.challenge
+        ? '<div class="modal-columns">' +
+            '<div><h4>Challenge</h4><p>' + esc(c.challenge) + "</p></div>" +
+            '<div><h4>Approach</h4><p>' + esc(c.approach) + "</p></div>" +
+          "</div>"
+        : '<p class="modal-story">' + esc(c.approach) + "</p>";
 
     var preAmp = "";
     if (c.preAmp) {

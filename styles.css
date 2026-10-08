@@ -484,6 +484,8 @@ main, .site-footer {
   color: var(--accent-ink);
 }
 .modal-story { margin: 0 0 16px; }
+.modal-story p { margin: 0 0 12px; }
+.modal-story p:last-child { margin-bottom: 0; }
 .modal-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
