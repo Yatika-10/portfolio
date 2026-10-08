@@ -116,7 +116,7 @@
         '<p class="hero__tagline">' + esc(DATA.profile.tagline) + "</p>" +
         '<div class="hero__actions">' +
           '<a class="btn btn-primary" href="' + hrefFor("flagship") + '">See flagship work</a>' +
-          '<a class="btn btn-ghost" href="#contact">Get in touch</a>' +
+          '<a class="btn btn-ghost" href="' + esc(DATA.contact.linkedin) + '" target="_blank" rel="noopener">Get in touch</a>' +
         "</div>" +
       "</section>" +
       (highlights ? '<section class="stat-grid">' + highlights + "</section>" : "") +
