@@ -96,14 +96,16 @@
 
   // ---------- section renderers ----------
 
+  var TINTS = ["tint-pink", "tint-blue", "tint-yellow"];
+
   function renderOverview() {
-    var highlights = (DATA.highlights || []).map(function (h) {
-      return '<div class="stat-card"><div class="stat-card__value">' + esc(h.stat) +
+    var highlights = (DATA.highlights || []).map(function (h, i) {
+      return '<div class="stat-card ' + TINTS[i % TINTS.length] + '"><div class="stat-card__value">' + esc(h.stat) +
         '</div><div class="stat-card__label">' + esc(h.label) + "</div></div>";
     }).join("");
 
-    var principles = (DATA.principles || []).map(function (p) {
-      return '<div class="principle-card"><h3>' + esc(p.heading) + "</h3><p>" + esc(p.body) + "</p></div>";
+    var principles = (DATA.principles || []).map(function (p, i) {
+      return '<div class="principle-card ' + TINTS[i % TINTS.length] + '"><h3>' + esc(p.heading) + "</h3><p>" + esc(p.body) + "</p></div>";
     }).join("");
 
     return (
@@ -248,16 +250,25 @@
     );
   }
 
+  var ICONS = {
+    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8.2" cy="8.2" r="1.3"/><rect x="7.1" y="11" width="2.2" height="7" /><path d="M12.3 11h2.1v1.1c.5-.8 1.3-1.3 2.4-1.3 2 0 2.7 1.3 2.7 3.3V18h-2.2v-3.5c0-1-.4-1.6-1.2-1.6-.9 0-1.5.6-1.5 1.7V18h-2.3z"/></svg>',
+    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1"/></svg>'
+  };
+
   function renderContact() {
     var c = DATA.contact;
+    var icons = (
+      (c.linkedin ? '<a class="icon-btn" href="' + esc(c.linkedin) + '" target="_blank" rel="noopener" aria-label="LinkedIn profile">' + ICONS.linkedin + "</a>" : "") +
+      (c.instagram ? '<a class="icon-btn" href="' + esc(c.instagram) + '" target="_blank" rel="noopener" aria-label="Instagram profile">' + ICONS.instagram + "</a>" : "")
+    );
     return (
       '<h2>Let\'s talk</h2>' +
       '<div class="contact-links">' +
         (c.email ? '<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a>" : "") +
         (c.phone ? '<a href="tel:' + esc(c.phone.replace(/\s+/g, "")) + '">' + esc(c.phone) + "</a>" : "") +
-        (c.linkedin ? '<a href="' + esc(c.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : "") +
         (c.resumeUrl ? '<a href="' + esc(c.resumeUrl) + '" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>' : "") +
       "</div>" +
+      (icons ? '<div class="icon-row">' + icons + "</div>" : "") +
       '<p class="footer-note">&copy; <span id="year"></span> ' + esc(DATA.profile.name) + "</p>"
     );
   }

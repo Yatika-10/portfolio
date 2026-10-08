@@ -7,8 +7,8 @@ window.PORTFOLIO_CONTENT = {
 
   profile: {
     name: "Yatika Malhotra",
-    title: "Marketing Lead",
-    tagline: "I build campaigns that turn attention into revenue — placeholder tagline, replace with your own one-liner.",
+    title: "Brand Manager",
+    tagline: "Usually thinking about what the brand should say next.",
     initials: "YM",
     location: "City, Country"
   },
@@ -16,7 +16,8 @@ window.PORTFOLIO_CONTENT = {
   contact: {
     email: "yatikamalhotra@gmail.com",
     phone: "7982029595",
-    linkedin: "https://www.linkedin.com/in/your-handle",
+    linkedin: "https://www.linkedin.com/in/yatikamalhotra10",
+    instagram: "https://www.instagram.com/sanna.malhotra/",
     resumeUrl: ""
   },
 
