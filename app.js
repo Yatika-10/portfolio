@@ -108,15 +108,27 @@
       return '<div class="principle-card ' + TINTS[i % TINTS.length] + '"><h3>' + esc(p.heading) + "</h3><p>" + esc(p.body) + "</p></div>";
     }).join("");
 
+    var bio = (DATA.profile.bio || []).map(function (line) {
+      return '<p class="hero__bio-line">' + esc(line) + "</p>";
+    }).join("");
+
+    var c = DATA.contact;
+    var contactButtons = (
+      (c.email ? '<a class="btn btn-ghost" href="mailto:' + esc(c.email) + '">Email</a>' : "") +
+      (c.linkedin ? '<a class="btn btn-ghost" href="' + esc(c.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' : "") +
+      (c.instagram ? '<a class="btn btn-ghost" href="' + esc(c.instagram) + '" target="_blank" rel="noopener">Instagram</a>' : "")
+    );
+
     return (
       '<section class="hero">' +
         '<div class="hero__avatar" aria-hidden="true">' + esc(DATA.profile.initials) + "</div>" +
         "<h1>" + esc(DATA.profile.name) + "</h1>" +
         '<p class="hero__title">' + esc(DATA.profile.title) + (DATA.profile.location ? " &middot; " + esc(DATA.profile.location) : "") + "</p>" +
         '<p class="hero__tagline">' + esc(DATA.profile.tagline) + "</p>" +
+        (bio ? '<div class="hero__bio">' + bio + "</div>" : "") +
+        (contactButtons ? '<div class="hero__actions">' + contactButtons + "</div>" : "") +
         '<div class="hero__actions">' +
           '<a class="btn btn-primary" href="' + hrefFor("flagship") + '">See flagship work</a>' +
-          '<a class="btn btn-ghost" href="' + esc(DATA.contact.linkedin) + '" target="_blank" rel="noopener">Get in touch</a>' +
         "</div>" +
       "</section>" +
       (highlights ? '<section class="stat-grid">' + highlights + "</section>" : "") +

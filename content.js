@@ -9,8 +9,12 @@ window.PORTFOLIO_CONTENT = {
     name: "Yatika Malhotra",
     title: "Brand Manager",
     tagline: "Usually thinking about what the brand should say next.",
+    bio: [
+      "5+ years of experience across CARS24, RxMen, Adfluence Hub, and URPopular.",
+      "Building brands through GTM strategy, product marketing, influencer campaigns, and integrated marketing."
+    ],
     initials: "YM",
-    location: "City, Country"
+    location: "Delhi, India"
   },
 
   contact: {

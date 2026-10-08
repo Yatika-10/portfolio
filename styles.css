@@ -135,8 +135,18 @@ main, .site-footer {
 }
 .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
 .hero__title { font-weight: 600; color: var(--muted); }
-.hero__tagline { max-width: 560px; margin: 16px auto 24px; font-size: 1.05rem; }
-.hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero__tagline {
+  max-width: 560px;
+  margin: 16px auto 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-ink);
+}
+.hero__bio { max-width: 560px; margin: 16px auto 24px; }
+.hero__bio-line { margin: 0 0 8px; font-size: 1rem; }
+.hero__bio-line:last-child { margin-bottom: 0; }
+.hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.hero__actions:last-of-type { margin-bottom: 0; }
 
 .stat-grid {
   display: grid;
