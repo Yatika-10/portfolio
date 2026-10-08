@@ -137,26 +137,52 @@
   }
 
   function renderFlagship() {
-    var picks = (DATA.flagshipPicks || []).map(function (pick) {
+    var picks = (DATA.flagshipPicks || []).map(function (pick, i) {
       var c = campaignById(pick.campaignId);
       if (!c) return "";
-      var metrics = (pick.metrics || []).map(function (m) {
-        return '<div class="metric"><div class="metric__value">' + esc(m.stat) + '</div><div class="metric__label">' + esc(m.label) + "</div></div>";
+
+      var media = (pick.coverImages || []).length
+        ? '<div class="flagship-card__media tint-' + ["pink", "blue", "yellow"][i % 3] + '">' +
+            pick.coverImages.map(function (src) { return '<img src="' + esc(src) + '" alt="">'; }).join("") +
+          "</div>"
+        : '<div class="flagship-card__media flagship-card__media--empty tint-' + ["pink", "blue", "yellow"][i % 3] + '"></div>';
+
+      var stats = (pick.metrics || []).map(function (m) {
+        return '<div class="stat-chip"><div class="stat-chip__value">' + esc(m.stat) + '</div><div class="stat-chip__label">' + esc(m.label) + "</div></div>";
       }).join("");
+
+      var metaParts = [c.company];
+      if (c.context) metaParts.push(c.context);
+      metaParts.push(c.displayDate);
+
+      var secondaryBtn = (pick.secondaryLink && pick.secondaryLink.url)
+        ? '<a class="btn btn-ghost" href="' + esc(pick.secondaryLink.url) + '" target="_blank" rel="noopener">' + esc(pick.secondaryLink.label || "Read more") + "</a>"
+        : "";
+
       return (
         '<article class="flagship-card">' +
-          '<div class="flagship-card__meta">' + esc(c.company) + " &middot; " + esc(c.displayDate) + "</div>" +
-          "<h3>" + esc(c.title) + "</h3>" +
-          '<p class="flagship-card__pitch">' + esc(pick.pitch) + "</p>" +
-          '<div class="metric-row">' + metrics + "</div>" +
-          '<a class="btn btn-primary" href="' + hrefFor("flagship", c.id) + '">See the full case</a>' +
+          media +
+          '<div class="flagship-card__body">' +
+            '<div class="flagship-card__meta">' + metaParts.map(esc).join(" &middot; ") + "</div>" +
+            "<h3>" + esc(c.title) + "</h3>" +
+            '<p class="flagship-card__hook">' + esc(pick.pitch) + "</p>" +
+            '<div class="flagship-card__columns">' +
+              '<div><h4>Problem</h4><p>' + esc(c.challenge) + "</p></div>" +
+              '<div><h4>Idea</h4><p>' + esc(c.approach) + "</p></div>" +
+            "</div>" +
+            (stats ? '<div class="stat-chip-row">' + stats + "</div>" : "") +
+            '<div class="flagship-card__actions">' +
+              '<a class="btn btn-primary" href="' + hrefFor("flagship", c.id) + '">See the full case &rarr;</a>' +
+              secondaryBtn +
+            "</div>" +
+          "</div>" +
         "</article>"
       );
     }).join("");
 
     return (
-      '<section class="section-intro"><h1>Flagship work</h1><p>The campaigns I\'d walk you through first.</p></section>' +
-      '<section class="flagship-grid">' + (picks || '<p class="empty-note">Add entries to flagshipPicks in content.js to populate this tab.</p>') + "</section>"
+      '<section class="section-intro"><h1>Flagship work</h1><p>The campaigns I\'d walk you through first, each broken down by problem, idea and proof.</p></section>' +
+      '<section class="flagship-list">' + (picks || '<p class="empty-note">Add entries to flagshipPicks in content.js to populate this tab.</p>') + "</section>"
     );
   }
 
@@ -295,12 +321,31 @@
       : "";
 
     var videoLinks = (c.videoLinks || []).map(function (v) {
-      return '<li><a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.label) + "</a></li>";
+      return '<li><a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.title || v.label) + "</a></li>";
     }).join("");
 
     var pressLinks = (c.pressLinks || []).map(function (p) {
-      return '<li><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.label) + "</a></li>";
+      return '<li><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title || p.label) + "</a></li>";
     }).join("");
+
+    var preAmp = "";
+    if (c.preAmp) {
+      var paParagraphs = (c.preAmp.paragraphs || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+      var paMetrics = (c.preAmp.metrics || []).map(function (m) {
+        return '<div class="metric"><div class="metric__value">' + esc(m.stat) + '</div><div class="metric__label">' + esc(m.label) + "</div></div>";
+      }).join("");
+      var paGallery = (c.preAmp.gallery || []).length
+        ? '<div class="modal-gallery">' + c.preAmp.gallery.map(function (src) { return '<img src="' + esc(src) + '" alt="" loading="lazy">'; }).join("") + "</div>"
+        : "";
+      preAmp = (
+        '<div class="modal-preamp">' +
+          "<h4>" + esc(c.preAmp.heading) + "</h4>" +
+          paParagraphs +
+          (paMetrics ? '<div class="metric-row">' + paMetrics + "</div>" : "") +
+          paGallery +
+        "</div>"
+      );
+    }
 
     return (
       '<div class="modal-overlay" data-modal-overlay>' +
@@ -316,6 +361,7 @@
           "</div>" +
           (results ? '<div class="metric-row">' + results + "</div>" : "") +
           gallery +
+          preAmp +
           (videoLinks ? '<div class="modal-links"><h4>Watch</h4><ul>' + videoLinks + "</ul></div>" : "") +
           (pressLinks ? '<div class="modal-links"><h4>Press</h4><ul>' + pressLinks + "</ul></div>" : "") +
           (c.ctaUrl ? '<a class="btn btn-primary" href="' + esc(c.ctaUrl) + '" target="_blank" rel="noopener">' + esc(c.ctaLabel || "View case") + "</a>" : "") +

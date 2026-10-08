@@ -51,7 +51,24 @@ window.PORTFOLIO_CONTENT = {
 
   // Flagship work tab: pick a few campaign ids from the list below and give them
   // their own framing/pitch. "campaignId" must match a campaigns[].id value.
+  // coverImages: 1-2 image paths shown side by side on the card.
+  // secondaryLink: optional second button next to "See the full case".
   flagshipPicks: [
+    {
+      campaignId: "vikram-and-betaal",
+      pitch: "If people don't trust you, borrow trust from a legend they already do.",
+      metrics: [
+        { stat: "2", label: "promise films" },
+        { stat: "8", label: "teaser cities" },
+        { stat: "38.5M+", label: "teaser views" },
+        { stat: "652K+", label: "teaser likes" }
+      ],
+      coverImages: [
+        "images/vikram-betaal-sighting-1.jpg",
+        "images/vikram-betaal-sighting-2.jpg"
+      ],
+      secondaryLink: { label: "", url: "" }
+    },
     {
       campaignId: "campaign-one",
       pitch: "One sentence on why this is the case you'd lead with in an interview.",
@@ -103,12 +120,56 @@ window.PORTFOLIO_CONTENT = {
   // with the roles/mediums used inside each campaign object below.
   filterOptions: {
     roles: ["Strategy", "Content", "Paid media", "Brand", "Growth"],
-    mediums: ["Social", "Video", "Email", "Out-of-home", "Web"]
+    mediums: ["Social", "Video", "Email", "Out-of-home", "Web", "TV", "CTV", "Digital"]
   },
 
   // The full case-study library. Add as many as you like — they automatically
   // show up in "All campaigns" (and in Flagship work / modals if referenced above).
   campaigns: [
+    {
+      id: "vikram-and-betaal",
+      title: "Vikram & Betaal",
+      company: "Cars24",
+      period: "2026-09",
+      displayDate: "Sep 2026",
+      context: "TV, CTV, digital",
+      roles: ["Strategy", "Content", "Brand"],
+      mediums: ["TV", "CTV", "Digital"],
+      isVideo: true,
+      summary: "If people don't trust you, borrow trust from a legend they already do.",
+      heroStat: { stat: "38.5M+", label: "pre-launch teaser views" },
+      challenge: "Cars24's two biggest customer promises were true — but truth alone wasn't making them memorable.",
+      approach: "We handed those two promises to Vikram and Betaal, a folklore pair every Indian already trusts, but only after letting an unbranded 'Betaal sightings' teaser run loose across 8 cities first.",
+      results: [
+        { stat: "2", label: "promise films" },
+        { stat: "8", label: "teaser cities" },
+        { stat: "38.5M+", label: "teaser views" }
+      ],
+      coverImage: "images/vikram-betaal-sighting-1.jpg",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: [
+        { title: "Featured by Mad Over Marketing", url: "https://www.instagram.com/p/DdV3L7rk0lO/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" }
+      ],
+      preAmp: {
+        heading: "Pre-Launch Amplification",
+        paragraphs: [
+          "Before revealing the brand films, we brought Betaal into the real world, creating mysterious sightings across Delhi, Mumbai, Bengaluru, Hyderabad, and Chennai. From airports and metro stations to malls and public spaces, Betaal started appearing everywhere, leaving people wondering what was happening.",
+          "We amplified these sightings through Instagram meme pages, Reddit, X, and LinkedIn, building curiosity and conversations without revealing the brand connection. The idea was simple: make Betaal a talking point before anyone knew there was a campaign coming."
+        ],
+        metrics: [
+          { stat: "38.5M+", label: "views" },
+          { stat: "652K+", label: "likes" }
+        ],
+        gallery: [
+          "images/vikram-betaal-sighting-1.jpg",
+          "images/vikram-betaal-sighting-2.jpg",
+          "images/vikram-betaal-sighting-3.jpg"
+        ]
+      }
+    },
     {
       id: "campaign-one",
       title: "Placeholder Campaign One",
