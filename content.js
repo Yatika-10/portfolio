@@ -424,6 +424,145 @@ window.PORTFOLIO_CONTENT = {
         { title: "Guru Dwivedi", url: "https://www.instagram.com/gurusdwivedi/" },
         { title: "Palak Choudhary", url: "https://www.instagram.com/yoopalak/" }
       ]
+    },
+    {
+      id: "fathers-day-parking",
+      title: "Parking Spots for Dads",
+      company: "Cars24",
+      period: "2025-06",
+      displayDate: "Jun 2025",
+      context: "Delhi, Bengaluru",
+      roles: ["Moment marketing"],
+      mediums: ["On-ground", "OOH & billboards"],
+      isVideo: false,
+      summary: "A 'Reserved' sign that was actually about your dad.",
+      heroStat: { stat: "3.6M+", label: "PR views" },
+      challenge: "Father's Day campaigns usually only live on social media. We wanted it to show up somewhere a car buyer actually walks past.",
+      approach: "We turned real reserved parking spots across Delhi and Bengaluru into simple messages for dads — a small, physical reminder in a space people pass every day, not another post in their feed.",
+      results: [
+        { stat: "3.6M+", label: "PR views, 13+ stories" },
+        { stat: "500K+", label: "LinkedIn impressions" },
+        { stat: "225K+", label: "Instagram views" }
+      ],
+      coverImage: "images/fathers-day-parking-1.jpg",
+      gallery: [
+        "images/fathers-day-parking-2.jpg",
+        "images/fathers-day-parking-3.jpg"
+      ],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
+    },
+    {
+      id: "ganpati-khetwadi",
+      title: "Bappa at Khetwadi",
+      company: "Cars24",
+      period: "2025-09",
+      displayDate: "Sep 2025",
+      context: "Mumbai",
+      roles: ["Moment marketing"],
+      mediums: ["On-ground"],
+      isVideo: false,
+      summary: "Being part of the festival, not just advertising next to it.",
+      heroStat: { stat: "1M+", label: "on-ground reach" },
+      challenge: "Mumbai's Ganpati visarjan is the city's biggest cultural moment — and the easiest one for a brand to get wrong by inserting itself too loudly.",
+      approach: "A Cars24 car carried Bappa through the visarjan procession at the iconic Khetwadi pandal, with branding kept deliberately subtle so the moment stayed about the festival.",
+      results: [
+        { stat: "1M+", label: "on-ground reach" },
+        { stat: "200K+", label: "LinkedIn impressions" },
+        { stat: "100+", label: "organic mentions" }
+      ],
+      coverImage: "images/ganpati-khetwadi-1.jpg",
+      gallery: [
+        "images/ganpati-khetwadi-2.jpg"
+      ],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
+    },
+    {
+      id: "thala-billboard",
+      title: "Thala's Birthday Billboard",
+      company: "Cars24",
+      period: "2026-07",
+      displayDate: "Jul 2026",
+      context: "Chennai",
+      roles: ["Purpose & road safety"],
+      mediums: ["OOH & billboards"],
+      isVideo: false,
+      summary: "A birthday tribute built entirely out of road-safety signs.",
+      heroStat: { stat: "2.4M", label: "Instagram reach" },
+      challenge: "Dhoni's birthday gets attention in Chennai every year — we wanted to point that attention toward something that actually matters: road safety.",
+      approach: "In the city that calls him Thala, we built a billboard where Dhoni's silhouette was formed entirely from everyday road-safety signage, so the safety message was the tribute, not a tagline next to it.",
+      results: [
+        { stat: "2.4M", label: "Instagram reach" },
+        { stat: "65K", label: "Instagram engagements" },
+        { stat: "731K", label: "LinkedIn reach" },
+        { stat: "1st", label: "innovation billboard in the South" }
+      ],
+      coverImage: "images/thala-billboard-1.jpg",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
+    },
+    {
+      id: "dk-lifetime-warranty",
+      title: "DK on Lifetime Warranty",
+      company: "Cars24",
+      period: "2025-11",
+      displayDate: "Nov 2025",
+      context: "Digital, pan-India",
+      roles: ["Trust & promises"],
+      mediums: ["Digital & social"],
+      isVideo: true,
+      summary: "A cricketer fans trust, making a promise people usually doubt.",
+      heroStat: { stat: "5M+", label: "reach" },
+      challenge: "Lifetime warranty is a hard promise to make believable in the used-car category — it needed a messenger people already trusted.",
+      approach: "We brought in Dinesh Karthik to explain the lifetime warranty promise directly, then carried the same idea into communication at Cars24 hubs.",
+      results: [
+        { stat: "5M+", label: "reach" },
+        { stat: "1M+", label: "views" },
+        { stat: "58K+", label: "likes" },
+        { stat: "6", label: "international cricketers engaged" }
+      ],
+      coverImage: "images/dk-lifetime-warranty-1.jpg",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
+    },
+    {
+      id: "dont-drink-drive",
+      title: "Don't Drink and Drive",
+      company: "Cars24",
+      period: "2025-12",
+      displayDate: "Dec 2025",
+      context: "Delhi, Gurugram, Pune",
+      roles: ["Purpose & road safety"],
+      mediums: ["OOH & billboards"],
+      isVideo: false,
+      summary: "Real wrecked cars, mounted where everyone could see them.",
+      heroStat: { stat: "9M+", label: "reach" },
+      challenge: "New Year season drunk-driving PSAs usually get tuned out — we wanted something people couldn't look away from.",
+      approach: "We mounted genuine accident-damaged cars on billboards across Delhi, Gurugram, and Pune, turning the wreckage itself into the warning.",
+      results: [
+        { stat: "9M+", label: "reach across Instagram, LinkedIn & X" },
+        { stat: "14", label: "PR stories, 8 top-tier" }
+      ],
+      coverImage: "images/dont-drink-drive-1.jpg",
+      gallery: [
+        "images/dont-drink-drive-2.jpg",
+        "images/dont-drink-drive-3.jpg"
+      ],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressLinks: []
     }
   ],
 
