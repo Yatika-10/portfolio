@@ -86,6 +86,16 @@ window.PORTFOLIO_CONTENT = {
         { stat: "9M+", label: "organic views" }
       ],
       secondaryLink: { label: "Read my post", url: "https://lnkd.in/p/gDMVxx36" }
+    },
+    {
+      campaignId: "creator-engine",
+      pitch: "100+ creators, one system to find, brief, and pay them.",
+      metrics: [
+        { stat: "119+", label: "creator collaborations" },
+        { stat: "35M+", label: "views, top single reel" },
+        { stat: "16+", label: "months running" },
+        { stat: "20", label: "reels featured below" }
+      ]
     }
   ],
 
@@ -378,10 +388,10 @@ window.PORTFOLIO_CONTENT = {
       roles: ["Creators & influence"],
       mediums: ["Digital & social"],
       isVideo: false,
-      summary: "Content that fits beats a celebrity shoot that takes a month to land.",
+      summary: "100+ creators, one system to find, brief, and pay them.",
       heroStat: { stat: "119+", label: "creator collaborations" },
-      challenge: "",
-      approach: "Instead of running one-off influencer posts, this is a repeatable system for finding, briefing, and paying creators across Instagram at scale — every brief written to fit the creator's own voice rather than reading like an ad, so it gets watched as content first.",
+      challenge: "Influencer marketing at Cars24 was one post at a time — find a creator, brief them, ship it, move on. No repeatable process, and no clear view of whether cost per view was actually improving.",
+      approach: "I built the process to run this every month instead of once — sourcing creators, briefing them, tracking what each one delivers, and paying out. 119+ creators later, cost per view has been coming down steadily.",
       results: [
         { stat: "119+", label: "creator collaborations" },
         { stat: "35M+", label: "views, top single reel" }
