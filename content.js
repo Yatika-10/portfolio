@@ -644,7 +644,7 @@ window.PORTFOLIO_CONTENT = {
         { stat: "42%", label: "increase in GMB business searches" },
         { stat: "9.4%", label: "increase in GMB click-through rate" }
       ],
-      coverImage: "",
+      coverImage: "images/rxmen-digital-growth-cover.jpg",
       gallery: [],
       ctaUrl: "https://www.instagram.com/rxmen.in/",
       ctaLabel: "Visit RxMen on Instagram",
