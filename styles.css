@@ -11,6 +11,8 @@
   --teal-soft: #dcf2f5;
   --yellow: #c9890a;
   --yellow-soft: #fcefd2;
+  --rose-2: #f8d3e3;
+  --rose-3: #f0a8c8;
   --radius: 14px;
   --shadow: 0 1px 2px rgba(26, 26, 26, 0.06), 0 8px 24px -12px rgba(26, 26, 26, 0.18);
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -426,6 +428,13 @@ main, .site-footer {
   object-fit: cover;
   display: block;
 }
+.flagship-card__media:not(.flagship-card__media--empty)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(232, 22, 122, 0.1), rgba(110, 15, 63, 0.16));
+  pointer-events: none;
+}
 .flagship-card__media--empty { background: var(--line); }
 .flagship-card__media::before {
   content: "";
@@ -441,6 +450,8 @@ main, .site-footer {
 .flagship-card__media.tint-pink::before { background: var(--accent); }
 .flagship-card__media.tint-blue::before { background: var(--teal); }
 .flagship-card__media.tint-yellow::before { background: var(--yellow); }
+.flagship-card__media.tint-rose2::before { background: var(--rose-3); }
+.flagship-card__media.tint-rose3::before { background: var(--accent-ink); }
 
 .play-badge {
   position: absolute;
@@ -487,6 +498,10 @@ main, .site-footer {
 .stat-chip.tint-blue .stat-chip__value { color: var(--teal); }
 .stat-chip.tint-yellow { background: var(--yellow-soft); }
 .stat-chip.tint-yellow .stat-chip__value { color: var(--yellow); }
+.stat-chip.tint-rose2 { background: var(--rose-2); }
+.stat-chip.tint-rose2 .stat-chip__value { color: var(--accent-ink); }
+.stat-chip.tint-rose3 { background: var(--rose-3); }
+.stat-chip.tint-rose3 .stat-chip__value { color: var(--accent-ink); }
 .stat-chip__value { font-weight: 800; font-size: 1.1rem; }
 
 .flagship-card__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
@@ -506,6 +521,10 @@ main, .site-footer {
 .metric.tint-blue .metric__value { color: var(--teal); }
 .metric.tint-yellow { background: var(--yellow-soft); }
 .metric.tint-yellow .metric__value { color: var(--yellow); }
+.metric.tint-rose2 { background: var(--rose-2); }
+.metric.tint-rose2 .metric__value { color: var(--accent-ink); }
+.metric.tint-rose3 { background: var(--rose-3); }
+.metric.tint-rose3 .metric__value { color: var(--accent-ink); }
 
 /* ---------- impact ---------- */
 
@@ -541,6 +560,8 @@ main, .site-footer {
 .impact-card__headline.tint-pink { color: var(--accent-ink); background: var(--accent-soft); }
 .impact-card__headline.tint-blue { color: var(--teal); background: var(--teal-soft); }
 .impact-card__headline.tint-yellow { color: var(--yellow); background: var(--yellow-soft); }
+.impact-card__headline.tint-rose2 { color: var(--accent-ink); background: var(--rose-2); }
+.impact-card__headline.tint-rose3 { color: var(--accent-ink); background: var(--rose-3); }
 .impact-card__bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .impact-card__bar-label { font-size: 0.8rem; color: var(--muted); width: 42px; flex-shrink: 0; }
 .impact-card__bar { flex: 1; height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; }
@@ -549,6 +570,8 @@ main, .site-footer {
 .impact-card__bar-fill--after.tint-pink { background: var(--accent); }
 .impact-card__bar-fill--after.tint-blue { background: var(--teal); }
 .impact-card__bar-fill--after.tint-yellow { background: var(--yellow); }
+.impact-card__bar-fill--after.tint-rose2 { background: var(--rose-3); }
+.impact-card__bar-fill--after.tint-rose3 { background: var(--accent-ink); }
 .impact-card__bar-value { font-size: 0.85rem; font-weight: 700; width: 56px; text-align: right; flex-shrink: 0; }
 .impact-card__note { margin: 10px 0 0; font-size: 0.9rem; }
 
@@ -591,14 +614,23 @@ main, .site-footer {
 .poll-card__media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 3px;
 }
 .poll-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.poll-card__media:not(.poll-card__media--empty)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(232, 22, 122, 0.12), rgba(110, 15, 63, 0.18));
+  pointer-events: none;
+}
 .poll-card__media--empty.tint-pink { background: var(--accent-soft); }
 .poll-card__media--empty.tint-blue { background: var(--teal-soft); }
 .poll-card__media--empty.tint-yellow { background: var(--yellow-soft); }
+.poll-card__media--empty.tint-rose2 { background: var(--rose-2); }
+.poll-card__media--empty.tint-rose3 { background: var(--rose-3); }
 .poll-card__title {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
@@ -609,6 +641,8 @@ main, .site-footer {
 .poll-card__note.tint-pink { background: var(--accent-soft); }
 .poll-card__note.tint-blue { background: var(--teal-soft); }
 .poll-card__note.tint-yellow { background: var(--yellow-soft); }
+.poll-card__note.tint-rose2 { background: var(--rose-2); }
+.poll-card__note.tint-rose3 { background: var(--rose-3); }
 .poll-card__meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
 .poll-card__hook {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -672,6 +706,8 @@ main, .site-footer {
 .career-node.tint-pink .career-node__marker { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); }
 .career-node.tint-blue .career-node__marker { border-color: var(--teal); background: var(--teal-soft); color: var(--teal); }
 .career-node.tint-yellow .career-node__marker { border-color: var(--yellow); background: var(--yellow-soft); color: var(--yellow); }
+.career-node.tint-rose2 .career-node__marker { border-color: var(--rose-3); background: var(--rose-2); color: var(--accent-ink); }
+.career-node.tint-rose3 .career-node__marker { border-color: var(--accent-ink); background: var(--rose-3); color: var(--accent-ink); }
 .career-node.is-current.tint-pink .career-node__marker { background: var(--accent); color: #fff; box-shadow: 0 0 0 5px var(--accent-soft); }
 .career-node.is-current.tint-blue .career-node__marker { background: var(--teal); color: #fff; box-shadow: 0 0 0 5px var(--teal-soft); }
 .career-node.is-current.tint-yellow .career-node__marker { background: var(--yellow); color: #fff; box-shadow: 0 0 0 5px var(--yellow-soft); }
@@ -720,6 +756,8 @@ main, .site-footer {
 .career-node.tint-pink .career-node__year { color: var(--accent-ink); }
 .career-node.tint-blue .career-node__year { color: var(--teal); }
 .career-node.tint-yellow .career-node__year { color: var(--yellow); }
+.career-node.tint-rose2 .career-node__year { color: var(--accent-ink); }
+.career-node.tint-rose3 .career-node__year { color: var(--accent-ink); }
 .career-node__company { font-size: 1.2rem; margin-bottom: 2px; }
 .career-node__role { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
 .career-node__line { margin: 0; font-size: 0.92rem; }
@@ -740,6 +778,8 @@ main, .site-footer {
 .award-card.tint-pink { background: var(--accent-soft); }
 .award-card.tint-blue { background: var(--teal-soft); }
 .award-card.tint-yellow { background: var(--yellow-soft); }
+.award-card.tint-rose2 { background: var(--rose-2); }
+.award-card.tint-rose3 { background: var(--rose-3); }
 .award-card__title { font-size: 1rem; margin-bottom: 4px; }
 .award-card__detail { font-size: 0.85rem; margin: 0 0 8px; }
 .award-card__link { font-weight: 700; font-size: 0.85rem; text-decoration: underline; }
@@ -875,6 +915,8 @@ main, .site-footer {
 .press-thumb.tint-pink .press-thumb__media { background: linear-gradient(155deg, var(--accent-soft), var(--accent)); }
 .press-thumb.tint-blue .press-thumb__media { background: linear-gradient(155deg, var(--teal-soft), var(--teal)); }
 .press-thumb.tint-yellow .press-thumb__media { background: linear-gradient(155deg, var(--yellow-soft), var(--yellow)); }
+.press-thumb.tint-rose2 .press-thumb__media { background: linear-gradient(155deg, var(--rose-2), var(--rose-3)); }
+.press-thumb.tint-rose3 .press-thumb__media { background: linear-gradient(155deg, var(--rose-3), var(--accent-ink)); }
 .press-thumb__tape {
   position: absolute;
   top: -5px;

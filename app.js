@@ -97,6 +97,7 @@
   // ---------- section renderers ----------
 
   var TINTS = ["tint-pink", "tint-blue", "tint-yellow"];
+  var PINK_TINTS = ["tint-pink", "tint-rose2", "tint-rose3"];
 
   function renderOverview() {
     var highlights = (DATA.highlights || []).map(function (h, i) {
@@ -160,7 +161,7 @@
       var c = campaignById(pick.campaignId);
       if (!c) return "";
 
-      var tint = TINTS[i % TINTS.length];
+      var tint = PINK_TINTS[i % PINK_TINTS.length];
       var media = c.coverImage
         ? '<div class="flagship-card__media ' + tint + '"><img src="' + esc(c.coverImage) + '" alt="">' +
             (c.isVideo ? '<span class="play-badge" aria-hidden="true">&#9658;</span>' : "") +
@@ -168,7 +169,7 @@
         : '<div class="flagship-card__media flagship-card__media--empty ' + tint + '"></div>';
 
       var stats = (pick.metrics || []).map(function (m, si) {
-        return '<div class="stat-chip ' + TINTS[si % TINTS.length] + '"><div class="stat-chip__value">' + esc(m.stat) + '</div><div class="stat-chip__label">' + esc(m.label) + "</div></div>";
+        return '<div class="stat-chip ' + PINK_TINTS[si % PINK_TINTS.length] + '"><div class="stat-chip__value">' + esc(m.stat) + '</div><div class="stat-chip__label">' + esc(m.label) + "</div></div>";
       }).join("");
 
       var metaParts = [c.company];
@@ -214,7 +215,7 @@
     var cards = (DATA.impactMetrics || []).map(function (m, i) {
       var beforePct = Math.max(0, Math.min(100, (m.beforeValue / m.maxValue) * 100));
       var afterPct = Math.max(0, Math.min(100, (m.afterValue / m.maxValue) * 100));
-      var tint = TINTS[i % TINTS.length];
+      var tint = PINK_TINTS[i % PINK_TINTS.length];
       return (
         '<div class="impact-card">' +
           '<div class="impact-card__head"><h3>' + esc(m.metric) + '</h3><span class="impact-card__company">' + esc(m.company) + "</span></div>" +
@@ -244,7 +245,7 @@
   function renderCampaignsTab() {
     var list = filteredCampaigns();
     var cardsHtml = list.map(function (c, i) {
-      var tint = TINTS[i % TINTS.length];
+      var tint = PINK_TINTS[i % PINK_TINTS.length];
       var media = c.coverImage
         ? '<div class="poll-card__media"><img src="' + esc(c.coverImage) + '" alt="">' + (c.isVideo ? '<span class="play-badge" aria-hidden="true">&#9658;</span>' : "") + "</div>"
         : '<div class="poll-card__media poll-card__media--empty ' + tint + '"></div>';
@@ -302,7 +303,7 @@
   function renderCareer() {
     var careerList = DATA.career || [];
     var entries = careerList.map(function (e, i) {
-      var tint = TINTS[i % TINTS.length];
+      var tint = PINK_TINTS[i % PINK_TINTS.length];
       var isCurrent = i === 0;
       var chapterNum = careerList.length - i;
       return (
@@ -321,7 +322,7 @@
     }).join("");
 
     var awards = (DATA.awards || []).map(function (a, i) {
-      var tint = TINTS[i % TINTS.length];
+      var tint = PINK_TINTS[i % PINK_TINTS.length];
       var link = a.url ? '<a class="award-card__link" href="' + esc(a.url) + '" target="_blank" rel="noopener">' + esc(a.linkLabel || "My post") + " &#8599;</a>" : "";
       return (
         '<div class="award-card ' + tint + '">' +
@@ -366,7 +367,7 @@
 
   function renderModal(c) {
     var results = (c.results || []).map(function (r, i) {
-      return '<div class="metric ' + TINTS[i % TINTS.length] + '"><div class="metric__value">' + esc(r.stat) + '</div><div class="metric__label">' + esc(r.label) + "</div></div>";
+      return '<div class="metric ' + PINK_TINTS[i % PINK_TINTS.length] + '"><div class="metric__value">' + esc(r.stat) + '</div><div class="metric__label">' + esc(r.label) + "</div></div>";
     }).join("");
 
     var gallery = (c.gallery || []).length
@@ -378,7 +379,7 @@
     }).join("");
 
     var pressBadges = (c.pressLinks || []).map(function (p, i) {
-      var tint = TINTS[i % TINTS.length];
+      var tint = PINK_TINTS[i % PINK_TINTS.length];
       var label = p.title || p.label || "";
       return (
         '<a class="press-thumb ' + tint + '" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
@@ -405,7 +406,7 @@
     if (c.preAmp) {
       var paParagraphs = (c.preAmp.paragraphs || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
       var paMetrics = (c.preAmp.metrics || []).map(function (m, i) {
-        return '<div class="metric ' + TINTS[i % TINTS.length] + '"><div class="metric__value">' + esc(m.stat) + '</div><div class="metric__label">' + esc(m.label) + "</div></div>";
+        return '<div class="metric ' + PINK_TINTS[i % PINK_TINTS.length] + '"><div class="metric__value">' + esc(m.stat) + '</div><div class="metric__label">' + esc(m.label) + "</div></div>";
       }).join("");
       var paGallery = (c.preAmp.gallery || []).length
         ? '<div class="modal-gallery">' + c.preAmp.gallery.map(function (src) { return '<img src="' + esc(src) + '" alt="" loading="lazy">'; }).join("") + "</div>"
