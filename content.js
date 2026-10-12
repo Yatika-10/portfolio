@@ -625,6 +625,31 @@ window.PORTFOLIO_CONTENT = {
         { title: "Campaign Reel 07", url: "https://www.instagram.com/reel/C55sKw_KyLl/" },
         { title: "Campaign Reel 08", url: "https://www.instagram.com/reel/C6Yy5AMs8In/" }
       ]
+    },
+    {
+      id: "rxmen-digital-growth",
+      title: "RxMen Digital Growth",
+      company: "RxMen (formerly Qurex)",
+      period: "2024-06",
+      displayDate: "2024",
+      context: "Performance, GMB, social & web",
+      roles: ["Brand building", "Growth & retail"],
+      mediums: ["Digital & social"],
+      isVideo: false,
+      summary: "Performance marketing, GMB, and web, all pointed at the same number: more people actually finding RxMen.",
+      heroStat: { stat: "42%", label: "increase in GMB business searches" },
+      challenge: "",
+      approach: "At Qurex (now RxMen), I worked across performance marketing, social media, Google Business Profile (GMB), and website optimisation. My responsibilities included planning and executing digital content to generate leads and build brand awareness, and improving website content to support user acquisition and conversions. I also managed GMB optimisation, contributing to a 9.4% increase in click-through rate and a 42% increase in business searches within two months. My work spanned content planning, campaign execution, and improving the brand's visibility across key digital touchpoints.",
+      results: [
+        { stat: "42%", label: "increase in GMB business searches" },
+        { stat: "9.4%", label: "increase in GMB click-through rate" }
+      ],
+      coverImage: "",
+      gallery: [],
+      ctaUrl: "https://www.instagram.com/rxmen.in/",
+      ctaLabel: "Visit RxMen on Instagram",
+      videoLinks: [],
+      pressLinks: []
     }
   ],
 

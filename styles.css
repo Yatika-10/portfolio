@@ -742,41 +742,59 @@ main, .site-footer {
   aspect-ratio: 9 / 13;
   border-radius: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: 6px;
+  padding: 10px 8px;
+  box-shadow: inset 0 -40px 36px -20px rgba(0, 0, 0, 0.32);
 }
 .press-thumb.tint-pink .press-thumb__media { background: linear-gradient(155deg, var(--accent-soft), var(--accent)); }
 .press-thumb.tint-blue .press-thumb__media { background: linear-gradient(155deg, var(--teal-soft), var(--teal)); }
 .press-thumb.tint-yellow .press-thumb__media { background: linear-gradient(155deg, var(--yellow-soft), var(--yellow)); }
-.press-thumb__initial {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 2.1rem;
-  color: rgba(255, 255, 255, 0.85);
+.press-thumb__tape {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 44px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transform: translateX(-50%) rotate(-4deg);
 }
+.press-thumb__sparkle {
+  position: absolute;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.press-thumb__sparkle--1 { top: 14px; left: 10px; }
 .press-thumb__play {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 22px;
-  height: 22px;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.92);
   color: var(--ink);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 2px;
 }
-.press-thumb__title {
-  font-size: 0.78rem;
-  font-weight: 600;
-  line-height: 1.3;
+.press-thumb__name {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  font-family: "Brush Script MT", "Segoe Script", "Apple Chancery", cursive;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: #fff;
   text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  padding-bottom: 2px;
+  overflow-wrap: break-word;
 }
 .press-thumb:hover .press-thumb__media { filter: brightness(1.05); }
 .modal-gallery {

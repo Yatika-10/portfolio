@@ -369,11 +369,14 @@
     var pressBadges = (c.pressLinks || []).map(function (p, i) {
       var tint = TINTS[i % TINTS.length];
       var label = p.title || p.label || "";
-      var initial = label.replace(/[^A-Za-z0-9]/g, "").charAt(0).toUpperCase() || "#";
       return (
         '<a class="press-thumb ' + tint + '" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
-          '<span class="press-thumb__media"><span class="press-thumb__initial">' + esc(initial) + '</span><span class="press-thumb__play">&#9654;</span></span>' +
-          '<span class="press-thumb__title">' + esc(label) + "</span>" +
+          '<span class="press-thumb__media">' +
+            '<span class="press-thumb__tape"></span>' +
+            '<span class="press-thumb__sparkle press-thumb__sparkle--1">&#10022;</span>' +
+            '<span class="press-thumb__play">&#9654;</span>' +
+            '<span class="press-thumb__name">' + esc(label) + "</span>" +
+          "</span>" +
         "</a>"
       );
     }).join("");
