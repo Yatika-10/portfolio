@@ -30,7 +30,7 @@ window.PORTFOLIO_CONTENT = {
   highlights: [
     { stat: "185M+", label: "impressions, first mass brand campaign in 3 years" },
     { stat: "1.6x", label: "organic brand search (+64%)" },
-    { stat: "₹0.10", label: "per view across 134M+ creator views" },
+    { stat: "₹0.05", label: "per view across 134M+ creator views" },
     { stat: "119+", label: "creator collaborations" }
   ],
 
