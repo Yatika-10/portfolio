@@ -291,12 +291,17 @@
   function renderCareer() {
     var entries = (DATA.career || []).map(function (e, i) {
       var tint = TINTS[i % TINTS.length];
+      var isCurrent = i === 0;
       return (
-        '<div class="career-card ' + tint + '">' +
-          '<div class="career-card__year">' + esc(e.period) + "</div>" +
-          '<h3 class="career-card__company">' + esc(e.company) + "</h3>" +
-          '<div class="career-card__role">' + esc(e.role) + "</div>" +
-          '<p class="career-card__line">' + esc(e.summary) + "</p>" +
+        '<div class="career-node ' + tint + (isCurrent ? " is-current" : "") + '">' +
+          '<div class="career-node__marker"></div>' +
+          '<div class="career-node__card">' +
+            (isCurrent ? '<span class="career-node__badge">Now</span>' : "") +
+            '<div class="career-node__year">' + esc(e.period) + "</div>" +
+            '<h3 class="career-node__company">' + esc(e.company) + "</h3>" +
+            '<div class="career-node__role">' + esc(e.role) + "</div>" +
+            '<p class="career-node__line">' + esc(e.summary) + "</p>" +
+          "</div>" +
         "</div>"
       );
     }).join("");
@@ -314,8 +319,8 @@
     }).join("");
 
     return (
-      '<section class="section-intro"><h1>Career and scope</h1><p class="section-subtitle">where I\'ve worked, and what each one was about</p></section>' +
-      '<section class="career-grid">' + entries + "</section>" +
+      '<section class="section-intro"><h1>Career and scope</h1><p class="section-subtitle">the climb so far, role by role</p></section>' +
+      '<section class="career-timeline">' + entries + "</section>" +
       (awards ? '<section class="section-intro"><h2>Recognition</h2></section><section class="award-grid">' + awards + "</section>" : "")
     );
   }
