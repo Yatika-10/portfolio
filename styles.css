@@ -4,9 +4,9 @@
   --surface: #ffffff;
   --line: #e6dcc6;
   --muted: #6b6257;
-  --accent: #ff2d78;
-  --accent-ink: #7a1130;
-  --accent-soft: #ffe1ec;
+  --accent: #e8167a;
+  --accent-ink: #6e0f3f;
+  --accent-soft: #fbdcec;
   --teal: #0f8fa3;
   --teal-soft: #dcf2f5;
   --yellow: #c9890a;
@@ -129,7 +129,7 @@ main, .site-footer {
   color: #fff;
   overflow: hidden;
 }
-.hero::before, .hero::after {
+.hero:not(.hero--photo)::before, .hero:not(.hero--photo)::after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -137,20 +137,65 @@ main, .site-footer {
   opacity: 0.3;
   pointer-events: none;
 }
-.hero::before {
+.hero:not(.hero--photo)::before {
   width: 240px;
   height: 240px;
   background: #ffffff;
   top: -80px;
   left: -70px;
 }
-.hero::after {
+.hero:not(.hero--photo)::after {
   width: 180px;
   height: 180px;
   background: var(--accent-ink);
   bottom: -50px;
   right: -40px;
 }
+.hero--photo {
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  padding: 48px 48px 56px;
+  background: #1a0410;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(1) contrast(1.1);
+  z-index: 0;
+}
+.hero__duotone {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(232, 22, 122, 0.78), rgba(90, 10, 55, 0.88));
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20, 3, 12, 0.55), transparent 55%);
+  z-index: 1;
+}
+.hero__sparkle {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  opacity: 0.85;
+  font-size: 1.3rem;
+  pointer-events: none;
+}
+.hero__sparkle--1 { top: 36px; left: 40px; }
+.hero__sparkle--2 { top: 56px; right: 64px; font-size: 1rem; }
+.hero__content { position: relative; z-index: 2; max-width: 640px; }
+.hero--photo .hero__tagline, .hero--photo .hero__bio { margin-left: 0; margin-right: 0; }
+.hero--photo .hero__bio { align-items: flex-start; }
+.hero--photo .hero__actions { justify-content: flex-start; }
 .hero__avatar {
   position: relative;
   width: 72px;
@@ -908,6 +953,7 @@ main, .site-footer {
   main { padding: 0 16px; }
   .site-footer { padding: 48px 16px 56px; }
   .hero { padding: 56px 16px 40px; }
+  .hero--photo { min-height: 420px; padding: 28px 24px 32px; }
 
   .flagship-card__body { padding: 20px; }
   .flagship-card__columns { grid-template-columns: 1fr; }

@@ -125,18 +125,25 @@
       (c.instagram ? '<a class="btn btn-ghost" href="' + esc(c.instagram) + '" target="_blank" rel="noopener">Instagram</a>' : "")
     );
 
+    var hasPhoto = !!DATA.profile.photo;
     return (
-      '<section class="hero">' +
-        (DATA.profile.photo
-          ? '<img class="hero__avatar hero__avatar--photo" src="' + esc(DATA.profile.photo) + '" alt="' + esc(DATA.profile.name) + '">'
+      '<section class="hero' + (hasPhoto ? " hero--photo" : "") + '">' +
+        (hasPhoto
+          ? '<img class="hero__bg" src="' + esc(DATA.profile.photo) + '" alt="">' +
+            '<div class="hero__duotone" aria-hidden="true"></div>' +
+            '<div class="hero__scrim" aria-hidden="true"></div>'
           : '<div class="hero__avatar" aria-hidden="true">' + esc(DATA.profile.initials) + "</div>") +
-        "<h1>" + esc(DATA.profile.name) + "</h1>" +
-        '<p class="hero__title">' + esc(DATA.profile.title) + (DATA.profile.location ? " &middot; " + esc(DATA.profile.location) : "") + "</p>" +
-        '<p class="hero__tagline">' + esc(DATA.profile.tagline) + "</p>" +
-        (bio ? '<div class="hero__bio">' + bio + "</div>" : "") +
-        (contactButtons ? '<div class="hero__actions">' + contactButtons + "</div>" : "") +
-        '<div class="hero__actions">' +
-          '<a class="btn btn-primary" href="' + hrefFor("flagship") + '">See flagship work</a>' +
+        '<span class="hero__sparkle hero__sparkle--1" aria-hidden="true">&#10022;</span>' +
+        '<span class="hero__sparkle hero__sparkle--2" aria-hidden="true">&#10022;</span>' +
+        '<div class="hero__content">' +
+          "<h1>" + esc(DATA.profile.name) + "</h1>" +
+          '<p class="hero__title">' + esc(DATA.profile.title) + (DATA.profile.location ? " &middot; " + esc(DATA.profile.location) : "") + "</p>" +
+          '<p class="hero__tagline">' + esc(DATA.profile.tagline) + "</p>" +
+          (bio ? '<div class="hero__bio">' + bio + "</div>" : "") +
+          (contactButtons ? '<div class="hero__actions">' + contactButtons + "</div>" : "") +
+          '<div class="hero__actions">' +
+            '<a class="btn btn-primary" href="' + hrefFor("flagship") + '">See flagship work</a>' +
+          "</div>" +
         "</div>" +
       "</section>" +
       '<div class="ticker" aria-hidden="true"><div class="ticker__track">' +
