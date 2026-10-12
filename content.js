@@ -430,26 +430,26 @@ window.PORTFOLIO_CONTENT = {
       videoLinks: [],
       pressHeading: "Best Performing Reels",
       pressLinks: [
-        { title: "Dil se paneer", url: "https://www.instagram.com/dilsepaneer/" },
-        { title: "Gagan", url: "https://www.instagram.com/justgagan__/" },
-        { title: "Pyari Varsha", url: "https://www.instagram.com/pyari.varsha/" },
-        { title: "Uditya", url: "https://www.instagram.com/udityaanain/" },
-        { title: "Bhavesh", url: "https://www.instagram.com/ibhaveshmanglani/" },
-        { title: "Yash & gyan", url: "https://www.instagram.com/flyingboysz/" },
-        { title: "Aryan", url: "https://www.instagram.com/aryan.nnnn9/" },
-        { title: "Sanjay Kathuria", url: "https://www.instagram.com/financebysanjay/" },
-        { title: "Rustam", url: "https://www.instagram.com/its_rustam09/" },
-        { title: "Himanshu", url: "https://www.instagram.com/himanshu_shadi_card/" },
-        { title: "Jasmine", url: "https://www.instagram.com/heyjassuu/" },
-        { title: "Priyal Rajput", url: "https://www.instagram.com/priyal_rajputtt/" },
-        { title: "Nidhi", url: "https://www.instagram.com/iam_nidhidixit/" },
-        { title: "Anuj Rathore", url: "https://www.instagram.com/rathoreanuj_/" },
-        { title: "Mufasa", url: "https://www.instagram.com/official_mufasa26/" },
-        { title: "Jhony Pandey", url: "https://www.instagram.com/jhony_pandey/" },
-        { title: "twistedsagar", url: "https://www.instagram.com/twistedsagar/" },
-        { title: "Vikhyat Shivhare", url: "https://www.instagram.com/vikhyatshivhare/" },
-        { title: "Guru Dwivedi", url: "https://www.instagram.com/gurusdwivedi/" },
-        { title: "Palak Choudhary", url: "https://www.instagram.com/yoopalak/" }
+        { title: "Dil se paneer", url: "https://www.instagram.com/reel/DSogy2NktNr/" },
+        { title: "Gagan", url: "https://www.instagram.com/reel/DY7UL21OWcC/" },
+        { title: "Pyari Varsha", url: "https://www.instagram.com/reels/DaIDFYAMlrf/" },
+        { title: "Uditya", url: "https://www.instagram.com/reel/DZ5AnxeuuYm/" },
+        { title: "Bhavesh", url: "https://www.instagram.com/reel/DSUxzrqiEal/" },
+        { title: "Yash & gyan", url: "https://www.instagram.com/reel/DTIMxshjWbP/" },
+        { title: "Aryan", url: "https://www.instagram.com/reel/DTPeLa8Ek-u/" },
+        { title: "Sanjay Kathuria", url: "https://www.instagram.com/reel/DXyZZpEshPc/" },
+        { title: "Rustam", url: "https://www.instagram.com/reel/DaUaPM1vr-B/" },
+        { title: "Himanshu", url: "https://www.instagram.com/reel/DRw-KzaERqz/" },
+        { title: "Jasmine", url: "https://www.instagram.com/p/DaKyTsYJElS/" },
+        { title: "Priyal Rajput", url: "https://www.instagram.com/reels/DcV5aHKPwu4/" },
+        { title: "Nidhi", url: "https://www.instagram.com/reel/DOgNaHKEi-S/" },
+        { title: "Anuj Rathore", url: "https://www.instagram.com/reel/DT0JA76jwRR/" },
+        { title: "Mufasa", url: "https://www.instagram.com/reel/DaIFRhiTcq9/" },
+        { title: "Jhony Pandey", url: "https://www.instagram.com/reel/DZ_8KtUTAhw/" },
+        { title: "twistedsagar", url: "https://www.instagram.com/reels/DaK-22nTCxP/" },
+        { title: "Vikhyat Shivhare", url: "https://www.instagram.com/reel/DaQF0r8sGC3/" },
+        { title: "Guru Dwivedi", url: "https://www.instagram.com/reels/DcGoGY-tHd8/" },
+        { title: "Palak Choudhary", url: "https://www.instagram.com/reels/Dcd1pwepmUZ/" }
       ]
     },
     {
@@ -609,7 +609,7 @@ window.PORTFOLIO_CONTENT = {
         { stat: "90", label: "creators" },
         { stat: "7M+", label: "views" }
       ],
-      coverImage: "",
+      coverImage: "images/kwality-walls-crackle-cover.jpg",
       gallery: [],
       ctaUrl: "",
       ctaLabel: "View case",
@@ -632,9 +632,9 @@ window.PORTFOLIO_CONTENT = {
   // order they render in.
   career: [
     { period: "2025", company: "Cars24", role: "Brand Manager", summary: "Vikram & Betaal, Boats24, the Creator Engine — most of this portfolio happened here." },
-    { period: "2024", company: "RxMen (formerly Qurex)", role: "Marketing Manager", summary: "Boosting 'brand' health — campaigns, content, and PR for intimate wellness, built through creator and healthcare-professional partnerships." },
-    { period: "2023", company: "Adfluence Hub", role: "Campaign Manager", summary: "Coordinated 200 creators for Lakmé Fashion Week in a 3-day window." },
-    { period: "2021", company: "URPopular", role: "Influencer Marketing Manager", summary: "Pitched and onboarded brands, then ran their influencer campaigns start to finish." }
+    { period: "2024", company: "RxMen (formerly Qurex)", role: "Marketing Manager", summary: "Led brand and marketing for RxMen's intimate wellness line." },
+    { period: "2023", company: "Adfluence Hub", role: "Campaign Manager", summary: "Ran execution for product launches and live events — from a nano-influencer-led ice cream launch to large-scale creator coordination for Lakmé Fashion Week." },
+    { period: "2021", company: "URPopular", role: "Influencer Marketing Manager", summary: "Worked on Coolwi, URPopular's new marketplace connecting influencers and brands — pitching and onboarding brands, then running their influencer campaigns start to finish." }
   ],
 
   // Optional — leave empty to hide this block entirely.

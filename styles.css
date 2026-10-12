@@ -649,7 +649,8 @@ main, .site-footer {
   text-align: center;
 }
 .contact-links { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
-.contact-links a { text-decoration: none; font-weight: 700; }
+.contact-links a { text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; }
+.contact-links a svg { flex: none; }
 .contact-links a:hover { color: var(--accent); }
 .footer-note { font-size: 0.85rem; }
 

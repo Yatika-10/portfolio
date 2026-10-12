@@ -294,10 +294,9 @@
       var tint = TINTS[i % TINTS.length];
       var isCurrent = i === 0;
       var chapterNum = careerList.length - i;
-      var initial = (e.company || "?").trim().charAt(0).toUpperCase();
       return (
         '<div class="career-node ' + tint + (isCurrent ? " is-current" : "") + '">' +
-          '<div class="career-node__marker">' + esc(initial) + "</div>" +
+          '<div class="career-node__marker">' + chapterNum + "</div>" +
           '<div class="career-node__card">' +
             '<span class="career-node__chapter">Chapter 0' + chapterNum + "</span>" +
             (isCurrent ? '<span class="career-node__badge">Now</span>' : "") +
@@ -331,7 +330,9 @@
 
   var ICONS = {
     linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="8.2" cy="8.2" r="1.3"/><rect x="7.1" y="11" width="2.2" height="7" /><path d="M12.3 11h2.1v1.1c.5-.8 1.3-1.3 2.4-1.3 2 0 2.7 1.3 2.7 3.3V18h-2.2v-3.5c0-1-.4-1.6-1.2-1.6-.9 0-1.5.6-1.5 1.7V18h-2.3z"/></svg>',
-    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1"/></svg>'
+    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1"/></svg>',
+    email: '<svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M5.5 3.5h3l1.3 4.3-2 1.7a12 12 0 0 0 6.7 6.7l1.7-2 4.3 1.3v3a2 2 0 0 1-2.2 2C10.9 20 4 13.1 3.5 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>'
   };
 
   function renderContact() {
@@ -343,8 +344,8 @@
     return (
       '<h2>Let\'s talk</h2>' +
       '<div class="contact-links">' +
-        (c.email ? '<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a>" : "") +
-        (c.phone ? '<a href="tel:' + esc(c.phone.replace(/\s+/g, "")) + '">' + esc(c.phone) + "</a>" : "") +
+        (c.email ? '<a href="mailto:' + esc(c.email) + '">' + ICONS.email + esc(c.email) + "</a>" : "") +
+        (c.phone ? '<a href="tel:+91' + esc(c.phone.replace(/\s+/g, "")) + '">' + ICONS.phone + "+91 " + esc(c.phone) + "</a>" : "") +
         (c.resumeUrl ? '<a href="' + esc(c.resumeUrl) + '" target="_blank" rel="noopener">R&eacute;sum&eacute;</a>' : "") +
       "</div>" +
       (icons ? '<div class="icon-row">' + icons + "</div>" : "") +
