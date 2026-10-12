@@ -569,14 +569,12 @@ window.PORTFOLIO_CONTENT = {
   // Career tab, oldest or newest first — whichever order you list them is the
   // order they render in.
   career: [
-    { period: "2024 — Present", company: "Company A", role: "Marketing Lead", summary: "Placeholder line about scope and focus in this role." },
-    { period: "2022 — 2024", company: "Company B", role: "Senior Marketing Manager", summary: "Placeholder line about scope and focus in this role." },
-    { period: "2020 — 2022", company: "Company C", role: "Marketing Manager", summary: "Placeholder line about scope and focus in this role." },
-    { period: "2018 — 2020", company: "Company D", role: "Marketing Associate", summary: "Placeholder line about scope and focus in this role." }
+    { period: "2021", company: "URPopular", role: "Influencer Marketing Manager", summary: "Pitched and onboarded brands, then ran their influencer campaigns start to finish." },
+    { period: "2023", company: "Adfluence Hub", role: "Campaign Manager", summary: "Coordinated 200 creators for Lakmé Fashion Week in a 3-day window." },
+    { period: "2024", company: "RxMen (formerly Qurex)", role: "Marketing Manager", summary: "Boosting 'brand' health." },
+    { period: "2025", company: "Cars24", role: "Brand Manager", summary: "Vikram & Betaal, Boats24, the Creator Engine — most of this portfolio happened here." }
   ],
 
   // Optional — leave empty to hide this block entirely.
-  awards: [
-    { title: "Placeholder award", detail: "Issuing body, year", url: "" }
-  ]
+  awards: []
 };

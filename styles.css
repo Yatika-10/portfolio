@@ -433,21 +433,48 @@ main, .site-footer {
 
 /* ---------- career ---------- */
 
-.career-list { padding-bottom: 32px; display: flex; flex-direction: column; gap: 4px; }
-.career-row {
+.career-grid {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 48px;
 }
-.career-row__period { color: var(--muted); font-weight: 700; font-size: 0.9rem; }
-.career-row__body h3 { font-size: 1.05rem; }
-.career-row__body p { margin: 0; }
+.career-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+}
+.career-card.tint-pink { border-top-color: var(--accent); }
+.career-card.tint-blue { border-top-color: var(--teal); }
+.career-card.tint-yellow { border-top-color: var(--yellow); }
+.career-card__year {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.career-card.tint-pink .career-card__year { color: var(--accent-ink); }
+.career-card.tint-blue .career-card__year { color: var(--teal); }
+.career-card.tint-yellow .career-card__year { color: var(--yellow); }
+.career-card__company { font-size: 1.1rem; margin-bottom: 2px; }
+.career-card__role { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
+.career-card__line { margin: 0; font-size: 0.92rem; }
 
-.awards { padding-bottom: 56px; }
-.awards ul { margin: 0; padding-left: 20px; }
-.awards li { margin-bottom: 6px; }
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding-bottom: 56px;
+}
+.award-card { border-radius: 12px; padding: 18px 20px; }
+.award-card.tint-pink { background: var(--accent-soft); }
+.award-card.tint-blue { background: var(--teal-soft); }
+.award-card.tint-yellow { background: var(--yellow-soft); }
+.award-card__title { font-size: 1rem; margin-bottom: 4px; }
+.award-card__detail { font-size: 0.85rem; margin: 0 0 8px; }
+.award-card__link { font-weight: 700; font-size: 0.85rem; text-decoration: underline; }
 
 /* ---------- footer / contact ---------- */
 
@@ -577,8 +604,6 @@ main, .site-footer {
   .nav-inner { padding: 12px 16px; gap: 10px; }
   .tab-row { order: 3; flex: 1 1 100%; }
   main, .site-footer { padding: 0 16px; }
-
-  .career-row { grid-template-columns: 1fr; gap: 4px; }
 
   .flagship-card__body { padding: 20px; }
   .flagship-card__columns { grid-template-columns: 1fr; }

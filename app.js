@@ -281,24 +281,34 @@
   }
 
   function renderCareer() {
-    var entries = (DATA.career || []).map(function (e) {
+    var entries = (DATA.career || []).map(function (e, i) {
+      var tint = TINTS[i % TINTS.length];
       return (
-        '<div class="career-row">' +
-          '<div class="career-row__period">' + esc(e.period) + "</div>" +
-          '<div class="career-row__body"><h3>' + esc(e.role) + " &middot; " + esc(e.company) + "</h3><p>" + esc(e.summary) + "</p></div>" +
+        '<div class="career-card ' + tint + '">' +
+          '<div class="career-card__year">' + esc(e.period) + "</div>" +
+          '<h3 class="career-card__company">' + esc(e.company) + "</h3>" +
+          '<div class="career-card__role">' + esc(e.role) + "</div>" +
+          '<p class="career-card__line">' + esc(e.summary) + "</p>" +
         "</div>"
       );
     }).join("");
 
-    var awards = (DATA.awards || []).map(function (a) {
-      var inner = esc(a.title) + (a.detail ? " &mdash; " + esc(a.detail) : "");
-      return '<li>' + (a.url ? '<a href="' + esc(a.url) + '" target="_blank" rel="noopener">' + inner + "</a>" : inner) + "</li>";
+    var awards = (DATA.awards || []).map(function (a, i) {
+      var tint = TINTS[i % TINTS.length];
+      var link = a.url ? '<a class="award-card__link" href="' + esc(a.url) + '" target="_blank" rel="noopener">' + esc(a.linkLabel || "My post") + " &#8599;</a>" : "";
+      return (
+        '<div class="award-card ' + tint + '">' +
+          '<h3 class="award-card__title">' + esc(a.title) + "</h3>" +
+          (a.detail ? '<p class="award-card__detail">' + esc(a.detail) + "</p>" : "") +
+          link +
+        "</div>"
+      );
     }).join("");
 
     return (
-      '<section class="section-intro"><h1>Career</h1><p>Where I\'ve worked and what I was responsible for.</p></section>' +
-      '<section class="career-list">' + entries + "</section>" +
-      (awards ? '<section class="awards"><h2 class="section-heading">Awards & recognition</h2><ul>' + awards + "</ul></section>" : "")
+      '<section class="section-intro"><h1>Career and scope</h1><p class="section-subtitle">where I\'ve worked, and what each one was about</p></section>' +
+      '<section class="career-grid">' + entries + "</section>" +
+      (awards ? '<section class="section-intro"><h2>Recognition</h2></section><section class="award-grid">' + awards + "</section>" : "")
     );
   }
 
