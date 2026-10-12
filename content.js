@@ -28,11 +28,10 @@ window.PORTFOLIO_CONTENT = {
 
   // Big numbers shown on the Overview tab.
   highlights: [
-    { stat: "300M+", label: "combined campaign views & impressions" },
-    { stat: "119+", label: "creator collaborations" },
-    { stat: "13+", label: "campaigns shipped" },
-    { stat: "200", label: "creators coordinated in a single 3-day window" },
-    { stat: "4", label: "companies, 5+ years in brand & growth" }
+    { stat: "185M+", label: "impressions, first mass brand campaign in 3 years" },
+    { stat: "1.6x", label: "organic brand search (+64%)" },
+    { stat: "₹0.10", label: "per view across 134M+ creator views" },
+    { stat: "119+", label: "creator collaborations" }
   ],
 
   // Short "how I work" cards on the Overview tab. Optional — leave the array empty to hide this block.
