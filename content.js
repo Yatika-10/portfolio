@@ -570,7 +570,7 @@ window.PORTFOLIO_CONTENT = {
   // order they render in.
   career: [
     { period: "2025", company: "Cars24", role: "Brand Manager", summary: "Vikram & Betaal, Boats24, the Creator Engine — most of this portfolio happened here." },
-    { period: "2024", company: "RxMen (formerly Qurex)", role: "Marketing Manager", summary: "Boosting 'brand' health." },
+    { period: "2024", company: "RxMen (formerly Qurex)", role: "Marketing Manager", summary: "Boosting 'brand' health — campaigns, content, and PR for intimate wellness, built through creator and healthcare-professional partnerships." },
     { period: "2023", company: "Adfluence Hub", role: "Campaign Manager", summary: "Coordinated 200 creators for Lakmé Fashion Week in a 3-day window." },
     { period: "2021", company: "URPopular", role: "Influencer Marketing Manager", summary: "Pitched and onboarded brands, then ran their influencer campaigns start to finish." }
   ],
