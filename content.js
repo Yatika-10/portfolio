@@ -569,10 +569,10 @@ window.PORTFOLIO_CONTENT = {
   // Career tab, oldest or newest first — whichever order you list them is the
   // order they render in.
   career: [
-    { period: "2021", company: "URPopular", role: "Influencer Marketing Manager", summary: "Pitched and onboarded brands, then ran their influencer campaigns start to finish." },
-    { period: "2023", company: "Adfluence Hub", role: "Campaign Manager", summary: "Coordinated 200 creators for Lakmé Fashion Week in a 3-day window." },
+    { period: "2025", company: "Cars24", role: "Brand Manager", summary: "Vikram & Betaal, Boats24, the Creator Engine — most of this portfolio happened here." },
     { period: "2024", company: "RxMen (formerly Qurex)", role: "Marketing Manager", summary: "Boosting 'brand' health." },
-    { period: "2025", company: "Cars24", role: "Brand Manager", summary: "Vikram & Betaal, Boats24, the Creator Engine — most of this portfolio happened here." }
+    { period: "2023", company: "Adfluence Hub", role: "Campaign Manager", summary: "Coordinated 200 creators for Lakmé Fashion Week in a 3-day window." },
+    { period: "2021", company: "URPopular", role: "Influencer Marketing Manager", summary: "Pitched and onboarded brands, then ran their influencer campaigns start to finish." }
   ],
 
   // Optional — leave empty to hide this block entirely.
