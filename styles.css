@@ -532,7 +532,7 @@ main, .site-footer {
 
 .career-timeline {
   position: relative;
-  padding: 4px 0 56px 44px;
+  padding: 4px 0 56px 52px;
 }
 .career-timeline::before {
   content: "";
@@ -541,41 +541,58 @@ main, .site-footer {
   top: 8px;
   bottom: 12px;
   width: 2px;
-  background: var(--line);
+  background: linear-gradient(to bottom, var(--ink), var(--line) 85%);
 }
 .career-node {
   position: relative;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 }
 .career-node:last-child { margin-bottom: 0; }
 .career-node__marker {
   position: absolute;
-  left: -36px;
-  top: 22px;
-  width: 16px;
-  height: 16px;
+  left: -44px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.95rem;
   background: var(--surface);
-  border: 3px solid var(--line);
+  border: 2px solid var(--line);
   z-index: 1;
 }
-.career-node.tint-pink .career-node__marker { border-color: var(--accent); }
-.career-node.tint-blue .career-node__marker { border-color: var(--teal); }
-.career-node.tint-yellow .career-node__marker { border-color: var(--yellow); }
-.career-node.is-current.tint-pink .career-node__marker { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
-.career-node.is-current.tint-blue .career-node__marker { background: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
-.career-node.is-current.tint-yellow .career-node__marker { background: var(--yellow); box-shadow: 0 0 0 4px var(--yellow-soft); }
+.career-node.tint-pink .career-node__marker { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); }
+.career-node.tint-blue .career-node__marker { border-color: var(--teal); background: var(--teal-soft); color: var(--teal); }
+.career-node.tint-yellow .career-node__marker { border-color: var(--yellow); background: var(--yellow-soft); color: var(--yellow); }
+.career-node.is-current.tint-pink .career-node__marker { background: var(--accent); color: #fff; box-shadow: 0 0 0 5px var(--accent-soft); }
+.career-node.is-current.tint-blue .career-node__marker { background: var(--teal); color: #fff; box-shadow: 0 0 0 5px var(--teal-soft); }
+.career-node.is-current.tint-yellow .career-node__marker { background: var(--yellow); color: #fff; box-shadow: 0 0 0 5px var(--yellow-soft); }
 
 .career-node__card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 20px;
+  padding: 20px 22px;
   position: relative;
+  transition: transform 0.15s ease;
 }
-.career-node.is-current .career-node__card {
-  border-color: var(--ink);
-  box-shadow: var(--shadow);
+.career-node.is-current.tint-pink .career-node__card { background: var(--accent-soft); border-color: var(--accent); }
+.career-node.is-current.tint-blue .career-node__card { background: var(--teal-soft); border-color: var(--teal); }
+.career-node.is-current.tint-yellow .career-node__card { background: var(--yellow-soft); border-color: var(--yellow); }
+.career-node.is-current .career-node__card { box-shadow: var(--shadow); }
+.career-node__chapter {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
 }
 .career-node__badge {
   position: absolute;
@@ -600,14 +617,14 @@ main, .site-footer {
 .career-node.tint-pink .career-node__year { color: var(--accent-ink); }
 .career-node.tint-blue .career-node__year { color: var(--teal); }
 .career-node.tint-yellow .career-node__year { color: var(--yellow); }
-.career-node__company { font-size: 1.15rem; margin-bottom: 2px; }
+.career-node__company { font-size: 1.2rem; margin-bottom: 2px; }
 .career-node__role { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
 .career-node__line { margin: 0; font-size: 0.92rem; }
 
 @media (max-width: 560px) {
-  .career-timeline { padding-left: 32px; }
+  .career-timeline { padding-left: 40px; }
   .career-timeline::before { left: 11px; }
-  .career-node__marker { left: -28px; width: 14px; height: 14px; }
+  .career-node__marker { left: -34px; width: 26px; height: 26px; font-size: 0.82rem; }
 }
 
 .award-grid {
@@ -708,20 +725,59 @@ main, .site-footer {
 
 .press-badge-block { margin-bottom: 16px; }
 .press-badge-block h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 8px; }
-.press-badge-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.press-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.5em 1em;
-  border-radius: 999px;
-  text-decoration: none;
+.press-thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 12px;
 }
-.press-badge:hover { background: #c7384f; }
+.press-thumb {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+}
+.press-thumb__media {
+  position: relative;
+  aspect-ratio: 9 / 13;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.press-thumb.tint-pink .press-thumb__media { background: linear-gradient(155deg, var(--accent-soft), var(--accent)); }
+.press-thumb.tint-blue .press-thumb__media { background: linear-gradient(155deg, var(--teal-soft), var(--teal)); }
+.press-thumb.tint-yellow .press-thumb__media { background: linear-gradient(155deg, var(--yellow-soft), var(--yellow)); }
+.press-thumb__initial {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+.press-thumb__play {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
+}
+.press-thumb__title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+.press-thumb:hover .press-thumb__media { filter: brightness(1.05); }
 .modal-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

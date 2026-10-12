@@ -590,6 +590,41 @@ window.PORTFOLIO_CONTENT = {
       ctaLabel: "View case",
       videoLinks: [],
       pressLinks: []
+    },
+    {
+      id: "kwality-walls-crackle",
+      title: "Kwality Wall's Crackle Launch",
+      company: "Adfluence Hub",
+      period: "2023-06",
+      displayDate: "2023",
+      context: "Pan-India, Instagram",
+      roles: ["Creators & influence"],
+      mediums: ["Digital & social"],
+      isVideo: true,
+      summary: "A product launch doesn't need the biggest influencers — it needs the right ones, talking at the same time.",
+      heroStat: { stat: "7M+", label: "views" },
+      challenge: "A product launch doesn't always need the biggest influencers. Sometimes, it needs the right creators, the right content, and enough people talking about it at the same time.",
+      approach: "For the launch of Kwality Wall's Crackle Ice Cream, I took a nano-influencer-led approach, working end to end with nearly 90 creators — identifying and shortlisting them on audience relevance, engagement, and content quality, developing creative concepts, preparing content briefs, and managing onboarding, approvals, and deliverables across every creator account. The idea was to make the launch feel less like a traditional ad campaign and more like a product people were naturally discovering through creators they already followed.",
+      results: [
+        { stat: "90", label: "creators" },
+        { stat: "7M+", label: "views" }
+      ],
+      coverImage: "",
+      gallery: [],
+      ctaUrl: "",
+      ctaLabel: "View case",
+      videoLinks: [],
+      pressHeading: "Featured Campaign Work",
+      pressLinks: [
+        { title: "Campaign Reel 01", url: "https://www.instagram.com/reel/C6YqMjTv5Ak/" },
+        { title: "Campaign Reel 02", url: "https://www.instagram.com/reel/C66IVvLvc4H/" },
+        { title: "Campaign Reel 03", url: "https://www.instagram.com/reel/C-K_9--SdrV/" },
+        { title: "Campaign Reel 04", url: "https://www.instagram.com/reel/C5qpkZrvJxX/" },
+        { title: "Campaign Reel 05", url: "https://www.instagram.com/reel/C6YXc3ZNssw/" },
+        { title: "Campaign Reel 06", url: "https://www.instagram.com/reel/C5VVyQov8bl/" },
+        { title: "Campaign Reel 07", url: "https://www.instagram.com/reel/C55sKw_KyLl/" },
+        { title: "Campaign Reel 08", url: "https://www.instagram.com/reel/C6Yy5AMs8In/" }
+      ]
     }
   ],
 

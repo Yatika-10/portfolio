@@ -289,13 +289,17 @@
   }
 
   function renderCareer() {
-    var entries = (DATA.career || []).map(function (e, i) {
+    var careerList = DATA.career || [];
+    var entries = careerList.map(function (e, i) {
       var tint = TINTS[i % TINTS.length];
       var isCurrent = i === 0;
+      var chapterNum = careerList.length - i;
+      var initial = (e.company || "?").trim().charAt(0).toUpperCase();
       return (
         '<div class="career-node ' + tint + (isCurrent ? " is-current" : "") + '">' +
-          '<div class="career-node__marker"></div>' +
+          '<div class="career-node__marker">' + esc(initial) + "</div>" +
           '<div class="career-node__card">' +
+            '<span class="career-node__chapter">Chapter 0' + chapterNum + "</span>" +
             (isCurrent ? '<span class="career-node__badge">Now</span>' : "") +
             '<div class="career-node__year">' + esc(e.period) + "</div>" +
             '<h3 class="career-node__company">' + esc(e.company) + "</h3>" +
@@ -361,8 +365,16 @@
       return '<li><a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.title || v.label) + "</a></li>";
     }).join("");
 
-    var pressBadges = (c.pressLinks || []).map(function (p) {
-      return '<a class="press-badge" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title || p.label) + " &#8599;</a>";
+    var pressBadges = (c.pressLinks || []).map(function (p, i) {
+      var tint = TINTS[i % TINTS.length];
+      var label = p.title || p.label || "";
+      var initial = label.replace(/[^A-Za-z0-9]/g, "").charAt(0).toUpperCase() || "#";
+      return (
+        '<a class="press-thumb ' + tint + '" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
+          '<span class="press-thumb__media"><span class="press-thumb__initial">' + esc(initial) + '</span><span class="press-thumb__play">&#9654;</span></span>' +
+          '<span class="press-thumb__title">' + esc(label) + "</span>" +
+        "</a>"
+      );
     }).join("");
 
     var story = (c.story && c.story.length)
@@ -402,7 +414,7 @@
           '<p class="modal-hook">' + esc(c.summary) + "</p>" +
           (c.coverImage ? '<img class="modal-cover" src="' + esc(c.coverImage) + '" alt="">' : "") +
           story +
-          (pressBadges ? '<div class="press-badge-block">' + (c.pressHeading ? '<h4>' + esc(c.pressHeading) + "</h4>" : "") + '<div class="press-badge-row">' + pressBadges + "</div></div>" : "") +
+          (pressBadges ? '<div class="press-badge-block">' + (c.pressHeading ? '<h4>' + esc(c.pressHeading) + "</h4>" : "") + '<div class="press-thumb-grid">' + pressBadges + "</div></div>" : "") +
           (results ? '<div class="metric-row">' + results + "</div>" : "") +
           gallery +
           preAmp +
