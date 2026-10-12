@@ -108,6 +108,12 @@
       return '<div class="principle-card ' + TINTS[i % TINTS.length] + '"><h3>' + esc(p.heading) + "</h3><p>" + esc(p.body) + "</p></div>";
     }).join("");
 
+    var scopeStats = "";
+    if (DATA.scopeStats && (DATA.scopeStats.items || []).length) {
+      var scopeItems = DATA.scopeStats.items.map(function (item) { return "<li>" + esc(item) + "</li>"; }).join("");
+      scopeStats = '<div class="scope-stats"><h3>' + esc(DATA.scopeStats.heading) + "</h3><ul>" + scopeItems + "</ul></div>";
+    }
+
     var bio = (DATA.profile.bio || []).map(function (line) {
       return '<p class="hero__bio-line">' + esc(line) + "</p>";
     }).join("");
@@ -121,7 +127,9 @@
 
     return (
       '<section class="hero">' +
-        '<div class="hero__avatar" aria-hidden="true">' + esc(DATA.profile.initials) + "</div>" +
+        (DATA.profile.photo
+          ? '<img class="hero__avatar hero__avatar--photo" src="' + esc(DATA.profile.photo) + '" alt="' + esc(DATA.profile.name) + '">'
+          : '<div class="hero__avatar" aria-hidden="true">' + esc(DATA.profile.initials) + "</div>") +
         "<h1>" + esc(DATA.profile.name) + "</h1>" +
         '<p class="hero__title">' + esc(DATA.profile.title) + (DATA.profile.location ? " &middot; " + esc(DATA.profile.location) : "") + "</p>" +
         '<p class="hero__tagline">' + esc(DATA.profile.tagline) + "</p>" +
@@ -132,7 +140,7 @@
         "</div>" +
       "</section>" +
       (highlights ? '<section class="stat-grid">' + highlights + "</section>" : "") +
-      (principles ? '<section class="principle-grid"><h2 class="section-heading">How I work</h2><div class="principle-grid__inner">' + principles + "</div></section>" : "")
+      (principles ? '<section class="principle-grid"><h2 class="section-heading">How I work</h2><div class="principle-grid__inner">' + principles + "</div>" + scopeStats + "</section>" : "")
     );
   }
 

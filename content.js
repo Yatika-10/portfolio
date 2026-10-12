@@ -14,7 +14,8 @@ window.PORTFOLIO_CONTENT = {
       "Brand building through GTM, product marketing, influencer & integrated campaigns."
     ],
     initials: "YM",
-    location: "Delhi, India"
+    location: "Delhi, India",
+    photo: "images/profile-photo.jpg"
   },
 
   contact: {
@@ -27,27 +28,44 @@ window.PORTFOLIO_CONTENT = {
 
   // Big numbers shown on the Overview tab.
   highlights: [
-    { stat: "00+", label: "Campaigns shipped" },
-    { stat: "00M", label: "Reach generated" },
-    { stat: "00%", label: "Avg. conversion lift" },
-    { stat: "00", label: "Brands worked with" }
+    { stat: "300M+", label: "combined campaign views & impressions" },
+    { stat: "119+", label: "creator collaborations" },
+    { stat: "13+", label: "campaigns shipped" },
+    { stat: "200", label: "creators coordinated in a single 3-day window" },
+    { stat: "4", label: "companies, 5+ years in brand & growth" }
   ],
 
   // Short "how I work" cards on the Overview tab. Optional — leave the array empty to hide this block.
   principles: [
     {
-      heading: "Placeholder principle one",
-      body: "Replace with a short line about how you approach marketing problems."
+      heading: "Ideas start with culture, not campaigns.",
+      body: "I look for moments people already care about, then find a way for the brand to belong naturally."
     },
     {
-      heading: "Placeholder principle two",
-      body: "Replace with a second line — tone, process, or a belief you hold about the craft."
+      heading: "Distribution is part of the idea.",
+      body: "A campaign isn't finished when it's created. I think about creators, PR, social, performance and conversations from day one."
     },
     {
-      heading: "Placeholder principle three",
-      body: "Replace with a third line. Three is a good number; more than four gets crowded."
+      heading: "Creativity should move a business metric.",
+      body: "Whether it's awareness, engagement or consideration, every idea should have a measurable outcome."
+    },
+    {
+      heading: "Move fast. Learn faster.",
+      body: "Some of my favourite work has gone from idea to execution in under 24 hours."
     }
   ],
+
+  // Small highlight strip shown below the "How I work" cards. Optional — leave items empty to hide.
+  scopeStats: {
+    heading: "In the last few years",
+    items: [
+      "300M+ campaign views and impressions generated",
+      "13+ integrated campaigns, idea to execution",
+      "Worked across brand, performance, creators and GTM",
+      "119+ creator partnerships built and managed",
+      "4 companies, one throughline: every idea tied to a number"
+    ]
+  },
 
   // Flagship work tab: pick a few campaign ids from the list below and give them
   // their own framing/pitch. "campaignId" must match a campaigns[].id value.
@@ -86,6 +104,16 @@ window.PORTFOLIO_CONTENT = {
         { stat: "9M+", label: "organic views" }
       ],
       secondaryLink: { label: "Read my post", url: "https://lnkd.in/p/gDMVxx36" }
+    },
+    {
+      campaignId: "the-promise-films",
+      pitch: "Three family promises, told the way people actually watch television now.",
+      metrics: [
+        { stat: "185M+", label: "impressions" },
+        { stat: "20M+", label: "social reach" },
+        { stat: "16/17", label: "markets with search lift" },
+        { stat: "3", label: "promise films" }
+      ]
     },
     {
       campaignId: "creator-engine",
