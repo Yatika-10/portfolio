@@ -423,7 +423,7 @@ window.PORTFOLIO_CONTENT = {
         { stat: "119+", label: "creator collaborations" },
         { stat: "35M+", label: "views, top single reel" }
       ],
-      coverImage: "",
+      coverImage: "images/creator-engine-cover.jpg",
       gallery: [],
       ctaUrl: "",
       ctaLabel: "View case",
