@@ -139,6 +139,10 @@
           '<a class="btn btn-primary" href="' + hrefFor("flagship") + '">See flagship work</a>' +
         "</div>" +
       "</section>" +
+      '<div class="ticker" aria-hidden="true"><div class="ticker__track">' +
+        '<span>BRAND BUILDER &bull; STORYTELLER &bull; GROWTH MARKETER &bull; CREATOR WRANGLER &bull; </span>' +
+        '<span>BRAND BUILDER &bull; STORYTELLER &bull; GROWTH MARKETER &bull; CREATOR WRANGLER &bull; </span>' +
+      "</div></div>" +
       (highlights ? '<section class="stat-grid">' + highlights + "</section>" : "") +
       (principles ? '<section class="principle-grid"><h2 class="section-heading">How I work</h2><div class="principle-grid__inner">' + principles + "</div>" + scopeStats + "</section>" : "")
     );
