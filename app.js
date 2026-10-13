@@ -250,7 +250,7 @@
         ? '<div class="poll-card__media"><img src="' + esc(c.coverImage) + '" alt="">' + (c.isVideo ? '<span class="play-badge" aria-hidden="true">&#9658;</span>' : "") + "</div>"
         : '<div class="poll-card__media poll-card__media--empty ' + tint + '"></div>';
       return (
-        '<article class="poll-card">' +
+        '<article class="poll-card" style="--i:' + i + '">' +
           media +
           "<h3 class=\"poll-card__title\">" + esc(c.title) + "</h3>" +
           '<div class="poll-card__note ' + tint + '">' +

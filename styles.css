@@ -593,9 +593,24 @@ main, .site-footer {
   cursor: pointer;
   white-space: nowrap;
   color: var(--ink);
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
+.chip:hover:not(.is-active) {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px -4px rgba(232, 22, 122, 0.4);
+}
+.chip:active { transform: translateY(0) scale(0.95); }
 .chip.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chip.is-active:hover { transform: translateY(-2px); box-shadow: 0 4px 10px -4px rgba(26, 26, 26, 0.4); }
 .view-toggle .chip.is-active { background: var(--accent); border-color: var(--accent); }
+.view-toggle .chip.is-active:hover { box-shadow: 0 4px 10px -4px rgba(232, 22, 122, 0.5); }
+@media (prefers-reduced-motion: reduce) {
+  .chip { transition: none; }
+  .chip:hover:not(.is-active), .chip.is-active:hover { transform: none; }
+}
 
 .campaign-count { color: var(--muted); font-size: 0.85rem; margin: 0 0 20px; }
 
@@ -610,6 +625,21 @@ main, .site-footer {
   border-radius: 6px;
   box-shadow: var(--shadow);
   padding: 10px 10px 0;
+  animation: card-pop 0.4s ease both;
+  animation-delay: calc(var(--i, 0) * 40ms);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.poll-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -14px rgba(26, 26, 26, 0.3);
+}
+@keyframes card-pop {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .poll-card { animation: none; transition: none; }
+  .poll-card:hover { transform: none; }
 }
 .poll-card__media {
   position: relative;
